@@ -34,13 +34,23 @@ namespace XerParser.ViewModels
 
         #endregion
 
-        private ObservableCollection<XerParser.Models.Currtype> _currtypes = null;
-        public ObservableCollection<XerParser.Models.Currtype> Currtypes
+        #region Currtypes
+        private List<XerParser.Models.Currtype> _currtypes = null;
+        public List<XerParser.Models.Currtype> Currtypes
         {
             get => _currtypes;
             set => Set(ref _currtypes, value);
         }
+        #endregion
 
+        #region Memotype
+        private List<XerParser.Models.Memotype> _memotypes = null;
+        public List<XerParser.Models.Memotype> Memotypes
+        {
+            get => _memotypes;
+            set => Set(ref _memotypes, value);
+        }
+        #endregion
 
         #region Commands
 
@@ -55,6 +65,7 @@ namespace XerParser.ViewModels
                 FilePath = openFileDialog.FileName;
                 var xp = new XerParser.Parse(_filePath);
                 Currtypes = xp.currtypesClassList;
+                Memotypes = xp.memotypesClassList;
             }
         }
         #endregion

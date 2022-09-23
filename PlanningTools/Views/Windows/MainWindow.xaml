@@ -51,11 +51,15 @@
                         <Label Content="{Binding Path=FilePath}"/>
                     </StackPanel>                    
                     <Button Content="Button" Width="120" HorizontalAlignment="Left"/>
-                    <DataGrid ItemsSource="{Binding Path=CurrTypes}">
-                        
-                    </DataGrid>
+                    
                 </StackPanel>                     
-            </TabItem>            
+            </TabItem>
+            <TabItem Header="Currency types">
+                <DataGrid ItemsSource="{Binding Path=Currtypes}" IsReadOnly="True"/>                
+            </TabItem>
+            <TabItem Header="Memo types">
+                <DataGrid ItemsSource="{Binding Path=Memotypes}" IsReadOnly="True"/>
+            </TabItem>
         </TabControl>
         
     </DockPanel>

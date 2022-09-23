@@ -9,8 +9,8 @@ namespace XerParser
 {
     public class Parse
     {
-        public readonly ObservableCollection<Currtype> currtypesClassList = new();
-        public readonly ObservableCollection<Memotype> memotypesClassList = new();
+        public readonly List<Currtype> currtypesClassList = new();
+        public readonly List<Memotype> memotypesClassList = new();
 
         private readonly string _filePath;
         public Parse(string filePath)
@@ -18,14 +18,14 @@ namespace XerParser
             _filePath = filePath;
             FileInfo fileInfo = new FileInfo(_filePath);
             if (!fileInfo.Exists) throw new FileNotFoundException();
-            
+
             ReadMultiClassFromCsv();
         }
 
         public void ReadMultiClassFromCsv()
         {
             string? discriminator = null;
-            string? classType = null;            
+            string? classType = null;
 
             var config = new CsvConfiguration(CultureInfo.CurrentCulture) { Delimiter = "\t" };
             using (var reader = new StreamReader(_filePath))
