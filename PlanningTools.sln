@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlanningTools", "PlanningTools\PlanningTools.csproj", "{BA68EBEB-1D82-4855-9251-0CB48122B43B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XerParser", "XerParser\XerParser.csproj", "{29FB635E-0623-4455-84A7-27E1126CB34D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA68EBEB-1D82-4855-9251-0CB48122B43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA68EBEB-1D82-4855-9251-0CB48122B43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA68EBEB-1D82-4855-9251-0CB48122B43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA68EBEB-1D82-4855-9251-0CB48122B43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FB635E-0623-4455-84A7-27E1126CB34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FB635E-0623-4455-84A7-27E1126CB34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FB635E-0623-4455-84A7-27E1126CB34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FB635E-0623-4455-84A7-27E1126CB34D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF9B11FA-0A59-4DD0-AABC-8377C2846082}
+	EndGlobalSection
+EndGlobal
