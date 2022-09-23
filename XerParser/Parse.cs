@@ -1,7 +1,5 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Globalization;
 using XerParser.Models;
 

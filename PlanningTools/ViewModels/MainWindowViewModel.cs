@@ -1,10 +1,8 @@
 ﻿using Microsoft.Win32;
-using System.Windows.Documents;
+using System.Collections.Generic;
 using System.Windows.Input;
 using XerParser.Infrastructure.Commands;
 using XerParser.ViewModels.Base;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace XerParser.ViewModels
 {
