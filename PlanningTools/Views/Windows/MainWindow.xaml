@@ -51,6 +51,9 @@
                         <Label Content="{Binding Path=FilePath}"/>
                     </StackPanel>                    
                     <Button Content="Button" Width="120" HorizontalAlignment="Left"/>
+                    <DataGrid ItemsSource="{Binding Path=CurrTypes}">
+                        
+                    </DataGrid>
                 </StackPanel>                     
             </TabItem>            
         </TabControl>

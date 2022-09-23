@@ -2,11 +2,11 @@
 {
     public class Currtype
     {
-        public int curr_id { get; set; }
-        public int decimal_digit_cnt { get; set; }
+        public string curr_id { get; set; }
+        public string decimal_digit_cnt { get; set; }
         public string? curr_symbol { get; set; }
         public string? decimal_symbol { get; set; }
-        public int digit_group_symbol { get; set; }
+        public string digit_group_symbol { get; set; }
         public string? pos_curr_fmt_type { get; set; }
         public string? neg_curr_fmt_type { get; set; }
         public string? curr_type { get; set; }

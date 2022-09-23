@@ -1,7 +1,10 @@
 ﻿using Microsoft.Win32;
+using System.Windows.Documents;
 using System.Windows.Input;
 using XerParser.Infrastructure.Commands;
 using XerParser.ViewModels.Base;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace XerParser.ViewModels
 {
@@ -31,6 +34,14 @@ namespace XerParser.ViewModels
 
         #endregion
 
+        private ObservableCollection<XerParser.Models.Currtype> _currtypes = null;
+        public ObservableCollection<XerParser.Models.Currtype> Currtypes
+        {
+            get => _currtypes;
+            set => Set(ref _currtypes, value);
+        }
+
+
         #region Commands
 
         #region OpenFileCommand
@@ -43,6 +54,7 @@ namespace XerParser.ViewModels
             {
                 FilePath = openFileDialog.FileName;
                 var xp = new XerParser.Parse(_filePath);
+                Currtypes = xp.currtypesClassList;
             }
         }
         #endregion
