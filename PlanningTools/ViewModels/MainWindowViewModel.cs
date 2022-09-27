@@ -72,6 +72,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region Project
+        private List<XerParser.Models.Classes.PROJECT>? _project = null;
+        public List<XerParser.Models.Classes.PROJECT>? Project
+        {
+            get => _project;
+            set => Set(ref _project, value);
+        }
+        #endregion
+
         #region RiskType
         private List<XerParser.Models.Classes.RISKTYPE>? _riskType = null;
         public List<XerParser.Models.Classes.RISKTYPE>? RiskType
@@ -135,6 +144,7 @@ namespace XerParser.ViewModels
                 RsrcCurvData = xp.RsrcCurvData.list;
                 UdfType = xp.UdfType.list;
                 Umeasure = xp.Umeasure.list;
+                Project = xp.Project.list;
             }
         }
         #endregion

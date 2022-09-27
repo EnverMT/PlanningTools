@@ -66,6 +66,9 @@
             <TabItem Header="OBS">
                 <DataGrid ItemsSource="{Binding Path=Obs}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="Project">
+                <DataGrid ItemsSource="{Binding Path=Project}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="RiskType">
                 <DataGrid ItemsSource="{Binding Path=RiskType}" IsReadOnly="True"/>
             </TabItem>
