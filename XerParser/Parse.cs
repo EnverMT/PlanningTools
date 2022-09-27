@@ -14,6 +14,8 @@ namespace XerParser
         public BaseModel<CURRTYPE> Currtypes = new();
         public BaseModel<MEMOTYPE> Memotypes = new();
         public BaseModel<NONWORK> Nonwork = new();
+        public BaseModel<OBS> Obs = new();
+
 
 
         public Parse(string filePath, CultureInfo? cultureInfo = null)
@@ -71,6 +73,9 @@ namespace XerParser
                                 break;
                             case "NONWORK":
                                 Nonwork.Add(csvReader);
+                                break;
+                            case "OBS":
+                                Obs.Add(csvReader);
                                 break;
                             default:
                                 break;

@@ -63,6 +63,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region Obs
+        private List<XerParser.Models.Classes.OBS>? _obs = null;
+        public List<XerParser.Models.Classes.OBS>? Obs
+        {
+            get => _obs;
+            set => Set(ref _obs, value);
+        }
+        #endregion
+
 
         #endregion
 
@@ -86,6 +95,7 @@ namespace XerParser.ViewModels
                 Currtypes = xp.Currtypes.list;
                 Memotypes = xp.Memotypes.list;
                 Nonwork = xp.Nonwork.list;
+                Obs = xp.Obs.list;
             }
         }
         #endregion

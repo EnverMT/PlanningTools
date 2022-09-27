@@ -1,6 +1,6 @@
 ﻿namespace XerParser.Models.Classes
 {
-    public class Risktype
+    public class RISKTYPE
     {
         public int risk_type_id { get; set; }
         public int? seq_num { get; set; }
