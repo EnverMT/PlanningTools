@@ -15,6 +15,8 @@ namespace XerParser
         public BaseModel<MEMOTYPE> Memotypes = new();
         public BaseModel<NONWORK> Nonwork = new();
         public BaseModel<OBS> Obs = new();
+        public BaseModel<RISKTYPE> RiskType = new();
+        public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
 
 
 
@@ -76,6 +78,12 @@ namespace XerParser
                                 break;
                             case "OBS":
                                 Obs.Add(csvReader);
+                                break;
+                            case "RISKTYPE":
+                                RiskType.Add(csvReader);
+                                break;
+                            case "RSRCCURVDATA":
+                                RsrcCurvData.Add(csvReader);
                                 break;
                             default:
                                 break;

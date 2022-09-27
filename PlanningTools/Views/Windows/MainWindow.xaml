@@ -66,6 +66,12 @@
             <TabItem Header="OBS">
                 <DataGrid ItemsSource="{Binding Path=Obs}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="RiskType">
+                <DataGrid ItemsSource="{Binding Path=RiskType}" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="RsrcCurveData">
+                <DataGrid ItemsSource="{Binding Path=RsrcCurvData}" IsReadOnly="True"/>
+            </TabItem>
         </TabControl>
 
     </DockPanel>

@@ -72,6 +72,24 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region RiskType
+        private List<XerParser.Models.Classes.RISKTYPE>? _riskType = null;
+        public List<XerParser.Models.Classes.RISKTYPE>? RiskType
+        {
+            get => _riskType;
+            set => Set(ref _riskType, value);
+        }
+        #endregion
+
+        #region RsrcCurvData
+        private List<XerParser.Models.Classes.RSRCCURVDATA>? _rsrcCurvData = null;
+        public List<XerParser.Models.Classes.RSRCCURVDATA>? RsrcCurvData
+        {
+            get => _rsrcCurvData;
+            set => Set(ref _rsrcCurvData, value);
+        }
+        #endregion
+
 
         #endregion
 
@@ -96,6 +114,8 @@ namespace XerParser.ViewModels
                 Memotypes = xp.Memotypes.list;
                 Nonwork = xp.Nonwork.list;
                 Obs = xp.Obs.list;
+                RiskType = xp.RiskType.list;
+                RsrcCurvData = xp.RsrcCurvData.list;
             }
         }
         #endregion
