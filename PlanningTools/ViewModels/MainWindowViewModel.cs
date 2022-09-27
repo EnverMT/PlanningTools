@@ -37,49 +37,24 @@ namespace XerParser.ViewModels
         #region ParsedTypes
 
         #region Currtypes
-        private List<XerParser.Models.Currtype>? _currtypes = null;
-        public List<XerParser.Models.Currtype>? Currtypes
+        private List<XerParser.Models.Classes.Currtype>? _currtypes = null;
+        public List<XerParser.Models.Classes.Currtype>? Currtypes
         {
             get => _currtypes;
             set => Set(ref _currtypes, value);
         }
         #endregion
 
-        #region Memotype
-        private List<XerParser.Models.Memotype>? _memotypes = null;
-        public List<XerParser.Models.Memotype>? Memotypes
+        #region Memotypes
+        private List<XerParser.Models.Classes.Memotype>? _memotypes = null;
+        public List<XerParser.Models.Classes.Memotype>? Memotypes
         {
             get => _memotypes;
             set => Set(ref _memotypes, value);
         }
         #endregion
 
-        #region Nonwork
-        private List<XerParser.Models.Nonwork>? _nonworktypes = null;
-        public List<XerParser.Models.Nonwork>? Nonworktypes
-        {
-            get => _nonworktypes;
-            set => Set(ref _nonworktypes, value);
-        }
-        #endregion
 
-        #region OBS
-        private List<XerParser.Models.OBS>? _OBStypes = null;
-        public List<XerParser.Models.OBS>? OBStypes
-        {
-            get => _OBStypes;
-            set => Set(ref _OBStypes, value);
-        }
-        #endregion
-
-        #region Risktype
-        private List<XerParser.Models.Risktype>? _Risktype = null;
-        public List<XerParser.Models.Risktype>? Risktype
-        {
-            get => _Risktype;
-            set => Set(ref _Risktype, value);
-        }
-        #endregion
 
         #endregion
 
@@ -100,11 +75,8 @@ namespace XerParser.ViewModels
                 {
                     NumberFormat = { NumberDecimalSeparator = "," }
                 });
-                Currtypes = xp.currtypesClassList;
-                Memotypes = xp.memotypesClassList;
-                Nonworktypes = xp.nonworkClassList;
-                OBStypes = xp.OBSClassList;
-                Risktype = xp.Risktype;
+                Currtypes = xp._Currtypes.list;
+                Memotypes = xp._Memotypes.list;
             }
         }
         #endregion

@@ -8,13 +8,9 @@ namespace XerParser
 {
     public class Parse
     {
-        public readonly List<Currtype> currtypesClassList = new();
-        public readonly List<Memotype> memotypesClassList = new();
-        public readonly List<Nonwork> nonworkClassList = new();
-        public readonly List<OBS> OBSClassList = new();
-        public readonly List<Risktype> Risktype = new();
-
         private readonly string _filePath;
+        public Currtypes _Currtypes = new();
+        public Memotypes _Memotypes = new();
         public Parse(string filePath, CultureInfo? cultureInfo = null)
         {
             _filePath = filePath;
@@ -40,7 +36,7 @@ namespace XerParser
             var encoding = CodePagesEncodingProvider.Instance.GetEncoding(1251);
 
             using (var reader = new StreamReader(_filePath, encoding!))
-            using (var csvReader = new CsvReader(reader, config))
+            using (CsvReader csvReader = new CsvReader(reader, config))
             {
                 while (csvReader.Read())
                 {
@@ -63,19 +59,10 @@ namespace XerParser
                         switch (classType)
                         {
                             case "CURRTYPE":
-                                currtypesClassList.Add(csvReader.GetRecord<Currtype>());
+                                _Currtypes.Add(csvReader);
                                 break;
                             case "MEMOTYPE":
-                                memotypesClassList.Add(csvReader.GetRecord<Memotype>());
-                                break;
-                            case "NONWORK":
-                                nonworkClassList.Add(csvReader.GetRecord<Nonwork>());
-                                break;
-                            case "OBS":
-                                OBSClassList.Add(csvReader.GetRecord<OBS>());
-                                break;
-                            case "RISKTYPE":
-                                Risktype.Add(csvReader.GetRecord<Risktype>());
+                                _Memotypes.Add(csvReader);
                                 break;
                             default:
                                 break;

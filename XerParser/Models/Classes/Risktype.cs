@@ -1,4 +1,4 @@
-﻿namespace XerParser.Models
+﻿namespace XerParser.Models.Classes
 {
     public class Risktype
     {

@@ -20,8 +20,8 @@
                             <fa:ImageAwesome Icon="Regular_File" Height="13" Width="15" Margin="0,0,5,0"/>
                             <TextBlock Text="Open file"/>
                         </StackPanel>
-                    </MenuItem.Header>                    
-                </MenuItem>                
+                    </MenuItem.Header>
+                </MenuItem>
                 <MenuItem>
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
@@ -49,27 +49,18 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Filepath: "/>
                         <Label Content="{Binding Path=FilePath}"/>
-                    </StackPanel>                    
+                    </StackPanel>
                     <Button Content="Button" Width="120" HorizontalAlignment="Left"/>
-                    
-                </StackPanel>                     
+
+                </StackPanel>
             </TabItem>
             <TabItem Header="Currency types">
-                <DataGrid ItemsSource="{Binding Path=Currtypes}" IsReadOnly="True"/>                
+                <DataGrid ItemsSource="{Binding Path=Currtypes}" IsReadOnly="True"/>
             </TabItem>
             <TabItem Header="Memo types">
                 <DataGrid ItemsSource="{Binding Path=Memotypes}" IsReadOnly="True"/>
             </TabItem>
-            <TabItem Header="Nonwork types">
-                <DataGrid ItemsSource="{Binding Path=Nonworktypes}" IsReadOnly="True"/>
-            </TabItem>
-            <TabItem Header="OBS">
-                <DataGrid ItemsSource="{Binding Path=OBStypes}" IsReadOnly="True"/>
-            </TabItem>
-            <TabItem Header="Risk type">
-                <DataGrid ItemsSource="{Binding Path=Risktype}" IsReadOnly="True"/>
-            </TabItem>
         </TabControl>
-        
+
     </DockPanel>
 </Window>
