@@ -12,6 +12,7 @@ namespace XerParser
         public readonly List<Memotype> memotypesClassList = new();
         public readonly List<Nonwork> nonworkClassList = new();
         public readonly List<OBS> OBSClassList = new();
+        public readonly List<Risktype> Risktype = new();
 
         private readonly string _filePath;
         public Parse(string filePath, CultureInfo? cultureInfo = null)
@@ -33,6 +34,7 @@ namespace XerParser
             var config = new CsvConfiguration(cultureInfo)
             {
                 Delimiter = "\t",
+                BadDataFound = null
             };
 
             var encoding = CodePagesEncodingProvider.Instance.GetEncoding(1251);
@@ -71,6 +73,9 @@ namespace XerParser
                                 break;
                             case "OBS":
                                 OBSClassList.Add(csvReader.GetRecord<OBS>());
+                                break;
+                            case "RISKTYPE":
+                                Risktype.Add(csvReader.GetRecord<Risktype>());
                                 break;
                             default:
                                 break;
