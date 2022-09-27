@@ -72,6 +72,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region Risktype
+        private List<XerParser.Models.Risktype>? _Risktype = null;
+        public List<XerParser.Models.Risktype>? Risktype
+        {
+            get => _Risktype;
+            set => Set(ref _Risktype, value);
+        }
+        #endregion
+
         #endregion
 
 
@@ -95,6 +104,7 @@ namespace XerParser.ViewModels
                 Memotypes = xp.memotypesClassList;
                 Nonworktypes = xp.nonworkClassList;
                 OBStypes = xp.OBSClassList;
+                Risktype = xp.Risktype;
             }
         }
         #endregion

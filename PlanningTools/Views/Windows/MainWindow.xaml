@@ -66,6 +66,9 @@
             <TabItem Header="OBS">
                 <DataGrid ItemsSource="{Binding Path=OBStypes}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="Risk type">
+                <DataGrid ItemsSource="{Binding Path=Risktype}" IsReadOnly="True"/>
+            </TabItem>
         </TabControl>
         
     </DockPanel>
