@@ -99,6 +99,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region Umeasure
+        private List<XerParser.Models.Classes.UMEASURE>? _umeasure = null;
+        public List<XerParser.Models.Classes.UMEASURE>? Umeasure
+        {
+            get => _umeasure;
+            set => Set(ref _umeasure, value);
+        }
+        #endregion
+
         #endregion
 
 
@@ -125,6 +134,7 @@ namespace XerParser.ViewModels
                 RiskType = xp.RiskType.list;
                 RsrcCurvData = xp.RsrcCurvData.list;
                 UdfType = xp.UdfType.list;
+                Umeasure = xp.Umeasure.list;
             }
         }
         #endregion

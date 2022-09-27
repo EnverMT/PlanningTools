@@ -75,6 +75,9 @@
             <TabItem Header="UdfType">
                 <DataGrid ItemsSource="{Binding Path=UdfType}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="Umeasure">
+                <DataGrid ItemsSource="{Binding Path=Umeasure}" IsReadOnly="True"/>
+            </TabItem>
         </TabControl>
 
     </DockPanel>

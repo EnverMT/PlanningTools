@@ -2,7 +2,6 @@
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.Text;
-using XerParser.Models;
 using XerParser.Models.Base;
 using XerParser.Models.Classes;
 
@@ -18,6 +17,7 @@ namespace XerParser
         public BaseModel<RISKTYPE> RiskType = new();
         public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
         public BaseModel<UDFTYPE> UdfType = new();
+        public BaseModel<UMEASURE> Umeasure = new();
 
 
 
@@ -88,6 +88,9 @@ namespace XerParser
                                 break;
                             case "UDFTYPE":
                                 UdfType.Add(csvReader);
+                                break;
+                            case "UMEASURE":
+                                Umeasure.Add(csvReader);
                                 break;
                             default:
                                 break;
