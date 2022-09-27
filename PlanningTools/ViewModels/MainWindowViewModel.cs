@@ -37,8 +37,8 @@ namespace XerParser.ViewModels
         #region ParsedTypes
 
         #region Currtypes
-        private List<XerParser.Models.Currtype> _currtypes = null;
-        public List<XerParser.Models.Currtype> Currtypes
+        private List<XerParser.Models.Currtype>? _currtypes = null;
+        public List<XerParser.Models.Currtype>? Currtypes
         {
             get => _currtypes;
             set => Set(ref _currtypes, value);
@@ -46,8 +46,8 @@ namespace XerParser.ViewModels
         #endregion
 
         #region Memotype
-        private List<XerParser.Models.Memotype> _memotypes = null;
-        public List<XerParser.Models.Memotype> Memotypes
+        private List<XerParser.Models.Memotype>? _memotypes = null;
+        public List<XerParser.Models.Memotype>? Memotypes
         {
             get => _memotypes;
             set => Set(ref _memotypes, value);
@@ -55,8 +55,8 @@ namespace XerParser.ViewModels
         #endregion
 
         #region Nonwork
-        private List<XerParser.Models.Nonwork> _nonworktypes = null;
-        public List<XerParser.Models.Nonwork> Nonworktypes
+        private List<XerParser.Models.Nonwork>? _nonworktypes = null;
+        public List<XerParser.Models.Nonwork>? Nonworktypes
         {
             get => _nonworktypes;
             set => Set(ref _nonworktypes, value);
@@ -64,8 +64,8 @@ namespace XerParser.ViewModels
         #endregion
 
         #region OBS
-        private List<XerParser.Models.OBS> _OBStypes = null;
-        public List<XerParser.Models.OBS> OBStypes
+        private List<XerParser.Models.OBS>? _OBStypes = null;
+        public List<XerParser.Models.OBS>? OBStypes
         {
             get => _OBStypes;
             set => Set(ref _OBStypes, value);
@@ -87,7 +87,7 @@ namespace XerParser.ViewModels
             if (openFileDialog.ShowDialog() == true)
             {
                 FilePath = openFileDialog.FileName;
-                var xp = new XerParser.Parse(_filePath, new System.Globalization.CultureInfo("ru-RU")
+                var xp = new XerParser.Parse(FilePath, new System.Globalization.CultureInfo("ru-RU")
                 {
                     NumberFormat = { NumberDecimalSeparator = "," }
                 });

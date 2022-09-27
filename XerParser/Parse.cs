@@ -1,6 +1,7 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using System.Globalization;
+using System.Text;
 using XerParser.Models;
 
 namespace XerParser
@@ -32,10 +33,11 @@ namespace XerParser
             var config = new CsvConfiguration(cultureInfo)
             {
                 Delimiter = "\t",
-                Encoding = System.Text.Encoding.Default
             };
 
-            using (var reader = new StreamReader(_filePath))
+            var encoding = CodePagesEncodingProvider.Instance.GetEncoding(1251);
+
+            using (var reader = new StreamReader(_filePath, encoding!))
             using (var csvReader = new CsvReader(reader, config))
             {
                 while (csvReader.Read())
