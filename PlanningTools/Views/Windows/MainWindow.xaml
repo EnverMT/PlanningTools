@@ -72,6 +72,9 @@
             <TabItem Header="RsrcCurveData">
                 <DataGrid ItemsSource="{Binding Path=RsrcCurvData}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="UdfType">
+                <DataGrid ItemsSource="{Binding Path=UdfType}" IsReadOnly="True"/>
+            </TabItem>
         </TabControl>
 
     </DockPanel>

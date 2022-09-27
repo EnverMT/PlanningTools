@@ -17,6 +17,7 @@ namespace XerParser
         public BaseModel<OBS> Obs = new();
         public BaseModel<RISKTYPE> RiskType = new();
         public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
+        public BaseModel<UDFTYPE> UdfType = new();
 
 
 
@@ -84,6 +85,9 @@ namespace XerParser
                                 break;
                             case "RSRCCURVDATA":
                                 RsrcCurvData.Add(csvReader);
+                                break;
+                            case "UDFTYPE":
+                                UdfType.Add(csvReader);
                                 break;
                             default:
                                 break;

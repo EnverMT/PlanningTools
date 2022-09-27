@@ -90,6 +90,14 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region UdfType
+        private List<XerParser.Models.Classes.UDFTYPE>? _udfType = null;
+        public List<XerParser.Models.Classes.UDFTYPE>? UdfType
+        {
+            get => _udfType;
+            set => Set(ref _udfType, value);
+        }
+        #endregion
 
         #endregion
 
@@ -116,6 +124,7 @@ namespace XerParser.ViewModels
                 Obs = xp.Obs.list;
                 RiskType = xp.RiskType.list;
                 RsrcCurvData = xp.RsrcCurvData.list;
+                UdfType = xp.UdfType.list;
             }
         }
         #endregion
