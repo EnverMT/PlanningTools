@@ -10,6 +10,7 @@ namespace XerParser
         public readonly List<Currtype> currtypesClassList = new();
         public readonly List<Memotype> memotypesClassList = new();
         public readonly List<Nonwork> nonworkClassList = new();
+        public readonly List<OBS> OBSClassList = new();
 
         private readonly string _filePath;
         public Parse(string filePath, CultureInfo? cultureInfo = null)
@@ -28,7 +29,11 @@ namespace XerParser
             string? discriminator = null;
             string? classType = null;
 
-            var config = new CsvConfiguration(cultureInfo) { Delimiter = "\t" };
+            var config = new CsvConfiguration(cultureInfo)
+            {
+                Delimiter = "\t",
+                Encoding = System.Text.Encoding.Default
+            };
 
             using (var reader = new StreamReader(_filePath))
             using (var csvReader = new CsvReader(reader, config))
@@ -61,6 +66,9 @@ namespace XerParser
                                 break;
                             case "NONWORK":
                                 nonworkClassList.Add(csvReader.GetRecord<Nonwork>());
+                                break;
+                            case "OBS":
+                                OBSClassList.Add(csvReader.GetRecord<OBS>());
                                 break;
                             default:
                                 break;

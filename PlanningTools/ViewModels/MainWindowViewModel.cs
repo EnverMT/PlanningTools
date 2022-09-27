@@ -32,6 +32,10 @@ namespace XerParser.ViewModels
 
         #endregion
 
+
+
+        #region ParsedTypes
+
         #region Currtypes
         private List<XerParser.Models.Currtype> _currtypes = null;
         public List<XerParser.Models.Currtype> Currtypes
@@ -59,6 +63,19 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region OBS
+        private List<XerParser.Models.OBS> _OBStypes = null;
+        public List<XerParser.Models.OBS> OBStypes
+        {
+            get => _OBStypes;
+            set => Set(ref _OBStypes, value);
+        }
+        #endregion
+
+        #endregion
+
+
+
         #region Commands
 
         #region OpenFileCommand
@@ -70,10 +87,14 @@ namespace XerParser.ViewModels
             if (openFileDialog.ShowDialog() == true)
             {
                 FilePath = openFileDialog.FileName;
-                var xp = new XerParser.Parse(_filePath, new System.Globalization.CultureInfo("ru-RU") { NumberFormat = { NumberDecimalSeparator = ","}}); 
+                var xp = new XerParser.Parse(_filePath, new System.Globalization.CultureInfo("ru-RU")
+                {
+                    NumberFormat = { NumberDecimalSeparator = "," }
+                });
                 Currtypes = xp.currtypesClassList;
                 Memotypes = xp.memotypesClassList;
                 Nonworktypes = xp.nonworkClassList;
+                OBStypes = xp.OBSClassList;
             }
         }
         #endregion
