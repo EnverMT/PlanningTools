@@ -1,6 +1,8 @@
-﻿namespace XerParser.Models
+﻿using XerParser.Models.Base;
+
+namespace XerParser.Models
 {
-    public class Memotype
+    public class Memotype : IBaseType
     {
         public int memo_type_id { get; set; }
         public int seq_num { get; set; }

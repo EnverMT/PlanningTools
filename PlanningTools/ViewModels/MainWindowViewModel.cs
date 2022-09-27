@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Input;
 using XerParser.Infrastructure.Commands;
+using XerParser.Models.Base;
 using XerParser.ViewModels.Base;
 
 namespace XerParser.ViewModels
@@ -33,8 +34,8 @@ namespace XerParser.ViewModels
         #endregion
 
         #region Currtypes
-        private List<XerParser.Models.Currtype> _currtypes = null;
-        public List<XerParser.Models.Currtype> Currtypes
+        private List<XerParser.Models.Base.IBaseType> _currtypes = null;
+        public List<XerParser.Models.Base.IBaseType> Currtypes
         {
             get => _currtypes;
             set => Set(ref _currtypes, value);
@@ -42,8 +43,8 @@ namespace XerParser.ViewModels
         #endregion
 
         #region Memotype
-        private List<XerParser.Models.Memotype> _memotypes = null;
-        public List<XerParser.Models.Memotype> Memotypes
+        private List<XerParser.Models.Base.IBaseType> _memotypes = null;
+        public List<XerParser.Models.Base.IBaseType> Memotypes
         {
             get => _memotypes;
             set => Set(ref _memotypes, value);
@@ -61,9 +62,9 @@ namespace XerParser.ViewModels
             if (openFileDialog.ShowDialog() == true)
             {
                 FilePath = openFileDialog.FileName;
-                var xp = new XerParser.Parse(_filePath);
+                var xp = new XerParser.Parse(_filePath, new System.Globalization.CultureInfo("tr-TR"));
                 Currtypes = xp.currtypesClassList;
-                Memotypes = xp.memotypesClassList;
+                Memotypes = xp.memotypesClassList;                
             }
         }
         #endregion
