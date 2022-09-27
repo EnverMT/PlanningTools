@@ -1,6 +1,6 @@
 ﻿namespace XerParser.Models.Classes
 {
-    public class Nonwork
+    public class NONWORK
     {
         public int nonwork_type_id { get; set; }
         public int seq_num { get; set; }

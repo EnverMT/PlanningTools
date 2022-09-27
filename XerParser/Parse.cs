@@ -3,14 +3,19 @@ using CsvHelper.Configuration;
 using System.Globalization;
 using System.Text;
 using XerParser.Models;
+using XerParser.Models.Base;
+using XerParser.Models.Classes;
 
 namespace XerParser
 {
     public class Parse
     {
         private readonly string _filePath;
-        public Currtypes _Currtypes = new();
-        public Memotypes _Memotypes = new();
+        public BaseModel<CURRTYPE> Currtypes = new();
+        public BaseModel<MEMOTYPE> Memotypes = new();
+        public BaseModel<NONWORK> Nonwork = new();
+
+
         public Parse(string filePath, CultureInfo? cultureInfo = null)
         {
             _filePath = filePath;
@@ -59,10 +64,13 @@ namespace XerParser
                         switch (classType)
                         {
                             case "CURRTYPE":
-                                _Currtypes.Add(csvReader);
+                                Currtypes.Add(csvReader);
                                 break;
                             case "MEMOTYPE":
-                                _Memotypes.Add(csvReader);
+                                Memotypes.Add(csvReader);
+                                break;
+                            case "NONWORK":
+                                Nonwork.Add(csvReader);
                                 break;
                             default:
                                 break;

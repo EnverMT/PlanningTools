@@ -60,6 +60,9 @@
             <TabItem Header="Memo types">
                 <DataGrid ItemsSource="{Binding Path=Memotypes}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="Nonwork">
+                <DataGrid ItemsSource="{Binding Path=Nonwork}" IsReadOnly="True"/>
+            </TabItem>
         </TabControl>
 
     </DockPanel>

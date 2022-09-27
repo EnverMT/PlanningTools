@@ -1,6 +1,6 @@
 ﻿namespace XerParser.Models.Classes
 {
-    public class Memotype
+    public class MEMOTYPE
     {
         public int memo_type_id { get; set; }
         public int seq_num { get; set; }

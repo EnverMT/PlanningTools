@@ -1,6 +1,6 @@
 ﻿namespace XerParser.Models.Classes
 {
-    public class Currtype : BaseClass
+    public class CURRTYPE
     {
         public int curr_id { get; set; }
         public int decimal_digit_cnt { get; set; }

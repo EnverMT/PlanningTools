@@ -37,8 +37,8 @@ namespace XerParser.ViewModels
         #region ParsedTypes
 
         #region Currtypes
-        private List<XerParser.Models.Classes.Currtype>? _currtypes = null;
-        public List<XerParser.Models.Classes.Currtype>? Currtypes
+        private List<XerParser.Models.Classes.CURRTYPE>? _currtypes = null;
+        public List<XerParser.Models.Classes.CURRTYPE>? Currtypes
         {
             get => _currtypes;
             set => Set(ref _currtypes, value);
@@ -46,14 +46,22 @@ namespace XerParser.ViewModels
         #endregion
 
         #region Memotypes
-        private List<XerParser.Models.Classes.Memotype>? _memotypes = null;
-        public List<XerParser.Models.Classes.Memotype>? Memotypes
+        private List<XerParser.Models.Classes.MEMOTYPE>? _memotypes = null;
+        public List<XerParser.Models.Classes.MEMOTYPE>? Memotypes
         {
             get => _memotypes;
             set => Set(ref _memotypes, value);
         }
         #endregion
 
+        #region Nonwork
+        private List<XerParser.Models.Classes.NONWORK>? _nonwork = null;
+        public List<XerParser.Models.Classes.NONWORK>? Nonwork
+        {
+            get => _nonwork;
+            set => Set(ref _nonwork, value);
+        }
+        #endregion
 
 
         #endregion
@@ -75,8 +83,9 @@ namespace XerParser.ViewModels
                 {
                     NumberFormat = { NumberDecimalSeparator = "," }
                 });
-                Currtypes = xp._Currtypes.list;
-                Memotypes = xp._Memotypes.list;
+                Currtypes = xp.Currtypes.list;
+                Memotypes = xp.Memotypes.list;
+                Nonwork = xp.Nonwork.list;
             }
         }
         #endregion
