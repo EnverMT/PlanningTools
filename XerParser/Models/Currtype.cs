@@ -1,8 +1,6 @@
-﻿using XerParser.Models.Base;
-
-namespace XerParser.Models
+﻿namespace XerParser.Models
 {
-    public class Currtype : IBaseType
+    public class Currtype
     {
         public int curr_id { get; set; }
         public int decimal_digit_cnt { get; set; }
@@ -14,6 +12,6 @@ namespace XerParser.Models
         public string? curr_type { get; set; }
         public string? curr_short_name { get; set; }
         public int group_digit_cnt { get; set; }
-        public int base_exch_rate { get; set; }
+        public double base_exch_rate { get; set; }
     }
 }
