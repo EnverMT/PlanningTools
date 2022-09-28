@@ -108,6 +108,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region SchedOptions
+        private List<XerParser.Models.Classes.SCHEDOPTIONS>? _schedOptions = null;
+        public List<XerParser.Models.Classes.SCHEDOPTIONS>? SchedOptions
+        {
+            get => _schedOptions;
+            set => Set(ref _schedOptions, value);
+        }
+        #endregion
+
         #region UdfType
         private List<XerParser.Models.Classes.UDFTYPE>? _udfType = null;
         public List<XerParser.Models.Classes.UDFTYPE>? UdfType
@@ -165,7 +174,7 @@ namespace XerParser.ViewModels
             UdfType = xp.UdfType.list;
             Umeasure = xp.Umeasure.list;
             Project = xp.Project.list;
-
+            SchedOptions = xp.SchedOptions.list;
         }
         #endregion
 

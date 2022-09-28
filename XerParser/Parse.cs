@@ -20,6 +20,7 @@ namespace XerParser
         public BaseModel<UDFTYPE> UdfType = new();
         public BaseModel<UMEASURE> Umeasure = new();
         public BaseModel<CALENDAR> Calendar = new();
+        public BaseModel<SCHEDOPTIONS> SchedOptions = new();
 
 
 
@@ -99,6 +100,10 @@ namespace XerParser
                             case "CALENDAR":
                                 Calendar.Add(csvReader);
                                 break;
+                            case "SCHEDOPTIONS":
+                                SchedOptions.Add(csvReader);
+                                break;
+
                             default:
                                 break;
                         }
