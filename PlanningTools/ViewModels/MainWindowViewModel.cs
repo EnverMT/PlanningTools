@@ -36,6 +36,15 @@ namespace XerParser.ViewModels
 
         #region ParsedTypes
 
+        #region ActvType
+        private List<XerParser.Models.Classes.ACTVTYPE>? _actvType = null;
+        public List<XerParser.Models.Classes.ACTVTYPE>? ActvType
+        {
+            get => _actvType;
+            set => Set(ref _actvType, value);
+        }
+        #endregion
+
         #region Calendar
         private List<XerParser.Models.Classes.CALENDAR>? _calendar = null;
         public List<XerParser.Models.Classes.CALENDAR>? Calendar
@@ -90,12 +99,30 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region ProjWbs
+        private List<XerParser.Models.Classes.PROJWBS>? _projWbs = null;
+        public List<XerParser.Models.Classes.PROJWBS>? ProjWbs
+        {
+            get => _projWbs;
+            set => Set(ref _projWbs, value);
+        }
+        #endregion
+
         #region RiskType
         private List<XerParser.Models.Classes.RISKTYPE>? _riskType = null;
         public List<XerParser.Models.Classes.RISKTYPE>? RiskType
         {
             get => _riskType;
             set => Set(ref _riskType, value);
+        }
+        #endregion
+
+        #region Rsrc
+        private List<XerParser.Models.Classes.RSRC>? _rsrc = null;
+        public List<XerParser.Models.Classes.RSRC>? Rsrc
+        {
+            get => _rsrc;
+            set => Set(ref _rsrc, value);
         }
         #endregion
 
@@ -164,17 +191,20 @@ namespace XerParser.ViewModels
             {
                 NumberFormat = { NumberDecimalSeparator = "," }
             });
+            ActvType = xp.ActvType.list;
             Calendar = xp.Calendar.list;
             Currtypes = xp.Currtypes.list;
             Memotypes = xp.Memotypes.list;
             Nonwork = xp.Nonwork.list;
             Obs = xp.Obs.list;
+            Project = xp.Project.list;
+            ProjWbs = xp.ProjWbs.list;
             RiskType = xp.RiskType.list;
+            Rsrc = xp.Rsrc.list;
             RsrcCurvData = xp.RsrcCurvData.list;
+            SchedOptions = xp.SchedOptions.list;
             UdfType = xp.UdfType.list;
             Umeasure = xp.Umeasure.list;
-            Project = xp.Project.list;
-            SchedOptions = xp.SchedOptions.list;
         }
         #endregion
 

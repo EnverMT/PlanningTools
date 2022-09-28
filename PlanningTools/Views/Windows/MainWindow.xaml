@@ -54,6 +54,9 @@
 
                 </StackPanel>
             </TabItem>
+            <TabItem Header="ActvType">
+                <DataGrid ItemsSource="{Binding Path=ActvType}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="Calendar">
                 <DataGrid ItemsSource="{Binding Path=Calendar}" IsReadOnly="True"/>
             </TabItem>
@@ -72,8 +75,14 @@
             <TabItem Header="Project">
                 <DataGrid ItemsSource="{Binding Path=Project}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="ProjWbs">
+                <DataGrid ItemsSource="{Binding Path=ProjWbs}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="RiskType">
                 <DataGrid ItemsSource="{Binding Path=RiskType}" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="Rsrc">
+                <DataGrid ItemsSource="{Binding Path=Rsrc}" IsReadOnly="True"/>
             </TabItem>
             <TabItem Header="RsrcCurveData">
                 <DataGrid ItemsSource="{Binding Path=RsrcCurvData}" IsReadOnly="True"/>

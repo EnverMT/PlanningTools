@@ -10,17 +10,21 @@ namespace XerParser
     public class Parse
     {
         private readonly string _filePath;
+
+        public BaseModel<ACTVTYPE> ActvType = new();
+        public BaseModel<CALENDAR> Calendar = new();
         public BaseModel<CURRTYPE> Currtypes = new();
         public BaseModel<MEMOTYPE> Memotypes = new();
         public BaseModel<NONWORK> Nonwork = new();
         public BaseModel<OBS> Obs = new();
         public BaseModel<PROJECT> Project = new();
+        public BaseModel<PROJWBS> ProjWbs = new();
         public BaseModel<RISKTYPE> RiskType = new();
+        public BaseModel<RSRC> Rsrc = new();
         public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
+        public BaseModel<SCHEDOPTIONS> SchedOptions = new();
         public BaseModel<UDFTYPE> UdfType = new();
         public BaseModel<UMEASURE> Umeasure = new();
-        public BaseModel<CALENDAR> Calendar = new();
-        public BaseModel<SCHEDOPTIONS> SchedOptions = new();
 
 
 
@@ -70,6 +74,12 @@ namespace XerParser
                     {
                         switch (classType)
                         {
+                            case "ACTVTYPE":
+                                ActvType.Add(csvReader);
+                                break;
+                            case "CALENDAR":
+                                Calendar.Add(csvReader);
+                                break;
                             case "CURRTYPE":
                                 Currtypes.Add(csvReader);
                                 break;
@@ -85,23 +95,26 @@ namespace XerParser
                             case "PROJECT":
                                 Project.Add(csvReader);
                                 break;
+                            case "PROJWBS":
+                                ProjWbs.Add(csvReader);
+                                break;
                             case "RISKTYPE":
                                 RiskType.Add(csvReader);
                                 break;
+                            case "RSRC":
+                                Rsrc.Add(csvReader);
+                                break;
                             case "RSRCCURVDATA":
                                 RsrcCurvData.Add(csvReader);
+                                break;
+                            case "SCHEDOPTIONS":
+                                SchedOptions.Add(csvReader);
                                 break;
                             case "UDFTYPE":
                                 UdfType.Add(csvReader);
                                 break;
                             case "UMEASURE":
                                 Umeasure.Add(csvReader);
-                                break;
-                            case "CALENDAR":
-                                Calendar.Add(csvReader);
-                                break;
-                            case "SCHEDOPTIONS":
-                                SchedOptions.Add(csvReader);
                                 break;
 
                             default:
