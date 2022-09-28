@@ -50,7 +50,7 @@
                         <TextBlock Text="Filepath: "/>
                         <Label Content="{Binding Path=FilePath}"/>
                     </StackPanel>
-                    <Button Content="Button" Width="120" HorizontalAlignment="Left"/>
+                    <Button Content="Parse XER file" Width="120" HorizontalAlignment="Left" Command="{Binding Path=ParseXerCommand}"/>
 
                 </StackPanel>
             </TabItem>

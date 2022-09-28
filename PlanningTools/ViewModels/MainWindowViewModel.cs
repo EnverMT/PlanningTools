@@ -141,21 +141,31 @@ namespace XerParser.ViewModels
             if (openFileDialog.ShowDialog() == true)
             {
                 FilePath = openFileDialog.FileName;
-                var xp = new XerParser.Parse(FilePath, new System.Globalization.CultureInfo("ru-RU")
-                {
-                    NumberFormat = { NumberDecimalSeparator = "," }
-                });
-                Calendar = xp.Calendar.list;
-                Currtypes = xp.Currtypes.list;
-                Memotypes = xp.Memotypes.list;
-                Nonwork = xp.Nonwork.list;
-                Obs = xp.Obs.list;
-                RiskType = xp.RiskType.list;
-                RsrcCurvData = xp.RsrcCurvData.list;
-                UdfType = xp.UdfType.list;
-                Umeasure = xp.Umeasure.list;
-                Project = xp.Project.list;
             }
+        }
+        #endregion
+
+        #region ParseXerCommand
+        public ICommand ParseXerCommand { get; }
+        private bool CanParseXerCommandExecute(object p) => true;
+        private void OnParseXerCommandExecuted(object p)
+        {
+            if (FilePath == null) return;
+            var xp = new XerParser.Parse(FilePath, new System.Globalization.CultureInfo("ru-RU")
+            {
+                NumberFormat = { NumberDecimalSeparator = "," }
+            });
+            Calendar = xp.Calendar.list;
+            Currtypes = xp.Currtypes.list;
+            Memotypes = xp.Memotypes.list;
+            Nonwork = xp.Nonwork.list;
+            Obs = xp.Obs.list;
+            RiskType = xp.RiskType.list;
+            RsrcCurvData = xp.RsrcCurvData.list;
+            UdfType = xp.UdfType.list;
+            Umeasure = xp.Umeasure.list;
+            Project = xp.Project.list;
+
         }
         #endregion
 
@@ -163,6 +173,7 @@ namespace XerParser.ViewModels
         public MainWindowViewModel()
         {
             OpenFileDialogCommand = new RelayCommand(OnOpenFileCommandExecuted, CanOpenFileCommandExecute);
+            ParseXerCommand = new RelayCommand(OnParseXerCommandExecuted, CanParseXerCommandExecute);
         }
     }
 }
