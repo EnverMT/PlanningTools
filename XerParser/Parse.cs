@@ -22,6 +22,7 @@ namespace XerParser
         public BaseModel<RISKTYPE> RiskType = new();
         public BaseModel<RSRC> Rsrc = new();
         public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
+        public BaseModel<RSRCRATE> RsrcRate = new();
         public BaseModel<SCHEDOPTIONS> SchedOptions = new();
         public BaseModel<UDFTYPE> UdfType = new();
         public BaseModel<UMEASURE> Umeasure = new();
@@ -106,6 +107,9 @@ namespace XerParser
                                 break;
                             case "RSRCCURVDATA":
                                 RsrcCurvData.Add(csvReader);
+                                break;
+                            case "RSRCRATE":
+                                RsrcRate.Add(csvReader);
                                 break;
                             case "SCHEDOPTIONS":
                                 SchedOptions.Add(csvReader);

@@ -87,6 +87,9 @@
             <TabItem Header="RsrcCurveData">
                 <DataGrid ItemsSource="{Binding Path=RsrcCurvData}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="RsrcRate">
+                <DataGrid ItemsSource="{Binding Path=RsrcRate}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="SchedOptions">
                 <DataGrid ItemsSource="{Binding Path=SchedOptions}" IsReadOnly="True"/>
             </TabItem>

@@ -135,6 +135,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region RsrcRate
+        private List<XerParser.Models.Classes.RSRCRATE>? _rsrcRate = null;
+        public List<XerParser.Models.Classes.RSRCRATE>? RsrcRate
+        {
+            get => _rsrcRate;
+            set => Set(ref _rsrcRate, value);
+        }
+        #endregion
+
         #region SchedOptions
         private List<XerParser.Models.Classes.SCHEDOPTIONS>? _schedOptions = null;
         public List<XerParser.Models.Classes.SCHEDOPTIONS>? SchedOptions
@@ -202,6 +211,7 @@ namespace XerParser.ViewModels
             RiskType = xp.RiskType.list;
             Rsrc = xp.Rsrc.list;
             RsrcCurvData = xp.RsrcCurvData.list;
+            RsrcRate = xp.RsrcRate.list;
             SchedOptions = xp.SchedOptions.list;
             UdfType = xp.UdfType.list;
             Umeasure = xp.Umeasure.list;
