@@ -36,6 +36,15 @@ namespace XerParser.ViewModels
 
         #region ParsedTypes
 
+        #region ActvCode
+        private List<XerParser.Models.Classes.ACTVCODE>? _actvCode = null;
+        public List<XerParser.Models.Classes.ACTVCODE>? ActvCode
+        {
+            get => _actvCode;
+            set => Set(ref _actvCode, value);
+        }
+        #endregion
+
         #region ActvType
         private List<XerParser.Models.Classes.ACTVTYPE>? _actvType = null;
         public List<XerParser.Models.Classes.ACTVTYPE>? ActvType
@@ -209,6 +218,7 @@ namespace XerParser.ViewModels
             {
                 NumberFormat = { NumberDecimalSeparator = "," }
             });
+            ActvCode = xp.ActvCode.list;
             ActvType = xp.ActvType.list;
             Calendar = xp.Calendar.list;
             Currtypes = xp.Currtypes.list;

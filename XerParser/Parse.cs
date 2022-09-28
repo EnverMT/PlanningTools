@@ -11,6 +11,7 @@ namespace XerParser
     {
         private readonly string _filePath;
 
+        public BaseModel<ACTVCODE> ActvCode = new();
         public BaseModel<ACTVTYPE> ActvType = new();
         public BaseModel<CALENDAR> Calendar = new();
         public BaseModel<CURRTYPE> Currtypes = new();
@@ -76,6 +77,9 @@ namespace XerParser
                     {
                         switch (classType)
                         {
+                            case "ACTVCODE":
+                                ActvCode.Add(csvReader);
+                                break;
                             case "ACTVTYPE":
                                 ActvType.Add(csvReader);
                                 break;

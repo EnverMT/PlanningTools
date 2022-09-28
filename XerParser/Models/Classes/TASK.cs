@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace XerParser.Models.Classes
+﻿namespace XerParser.Models.Classes
 {
     public class TASK
     {

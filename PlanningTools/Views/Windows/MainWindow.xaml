@@ -54,6 +54,9 @@
 
                 </StackPanel>
             </TabItem>
+            <TabItem Header="ActvCode">
+                <DataGrid ItemsSource="{Binding Path=ActvCode}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="ActvType">
                 <DataGrid ItemsSource="{Binding Path=ActvType}" IsReadOnly="True"/>
             </TabItem>
