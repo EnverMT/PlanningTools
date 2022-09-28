@@ -153,6 +153,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region Task
+        private List<XerParser.Models.Classes.TASK>? _task = null;
+        public List<XerParser.Models.Classes.TASK>? Task
+        {
+            get => _task;
+            set => Set(ref _task, value);
+        }
+        #endregion
+
         #region UdfType
         private List<XerParser.Models.Classes.UDFTYPE>? _udfType = null;
         public List<XerParser.Models.Classes.UDFTYPE>? UdfType
@@ -213,6 +222,7 @@ namespace XerParser.ViewModels
             RsrcCurvData = xp.RsrcCurvData.list;
             RsrcRate = xp.RsrcRate.list;
             SchedOptions = xp.SchedOptions.list;
+            Task = xp.Task.list;
             UdfType = xp.UdfType.list;
             Umeasure = xp.Umeasure.list;
         }

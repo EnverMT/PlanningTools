@@ -93,6 +93,9 @@
             <TabItem Header="SchedOptions">
                 <DataGrid ItemsSource="{Binding Path=SchedOptions}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="Task">
+                <DataGrid ItemsSource="{Binding Path=Task}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="UdfType">
                 <DataGrid ItemsSource="{Binding Path=UdfType}" IsReadOnly="True"/>
             </TabItem>
