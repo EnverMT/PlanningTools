@@ -10,4 +10,4 @@ namespace XerParser.Models.Base
             list.Add(csvReader.GetRecord<T>());
         }
     }
-}
+}  //какойн ибудь комментарий
