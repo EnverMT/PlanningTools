@@ -54,6 +54,9 @@
 
                 </StackPanel>
             </TabItem>
+            <TabItem Header="Calendar">
+                <DataGrid ItemsSource="{Binding Path=Calendar}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="Currency types">
                 <DataGrid ItemsSource="{Binding Path=Currtypes}" IsReadOnly="True"/>
             </TabItem>

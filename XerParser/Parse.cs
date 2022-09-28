@@ -19,6 +19,7 @@ namespace XerParser
         public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
         public BaseModel<UDFTYPE> UdfType = new();
         public BaseModel<UMEASURE> Umeasure = new();
+        public BaseModel<CALENDAR> Calendar = new();
 
 
 
@@ -35,7 +36,6 @@ namespace XerParser
 
         public void ReadMultiClassFromCsv(CultureInfo cultureInfo)
         {
-            string? discriminator = null;
             string? classType = null;
 
             var config = new CsvConfiguration(cultureInfo)
@@ -51,7 +51,7 @@ namespace XerParser
             {
                 while (csvReader.Read())
                 {
-                    discriminator = csvReader.GetField<string>(0);
+                    string? discriminator = csvReader.GetField<string>(0);
 
                     if (discriminator == "%T")
                     {
@@ -95,6 +95,9 @@ namespace XerParser
                                 break;
                             case "UMEASURE":
                                 Umeasure.Add(csvReader);
+                                break;
+                            case "CALENDAR":
+                                Calendar.Add(csvReader);
                                 break;
                             default:
                                 break;

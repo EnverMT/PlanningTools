@@ -1,10 +1,7 @@
-﻿using System;
-using XerParser.Models.Classes;
-
-namespace XerParser.Models.Classes
+﻿namespace XerParser.Models.Classes
 {
     public class PROJECT
-    {        
+    {
         public int proj_id { get; set; }
         public int fy_start_month_num { get; set; }
         public string? rsrc_self_add_flag { get; set; }

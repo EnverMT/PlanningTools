@@ -36,6 +36,15 @@ namespace XerParser.ViewModels
 
         #region ParsedTypes
 
+        #region Calendar
+        private List<XerParser.Models.Classes.CALENDAR>? _calendar = null;
+        public List<XerParser.Models.Classes.CALENDAR>? Calendar
+        {
+            get => _calendar;
+            set => Set(ref _calendar, value);
+        }
+        #endregion
+
         #region Currtypes
         private List<XerParser.Models.Classes.CURRTYPE>? _currtypes = null;
         public List<XerParser.Models.Classes.CURRTYPE>? Currtypes
@@ -136,6 +145,7 @@ namespace XerParser.ViewModels
                 {
                     NumberFormat = { NumberDecimalSeparator = "," }
                 });
+                Calendar = xp.Calendar.list;
                 Currtypes = xp.Currtypes.list;
                 Memotypes = xp.Memotypes.list;
                 Nonwork = xp.Nonwork.list;
