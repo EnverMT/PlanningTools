@@ -54,7 +54,7 @@ namespace XerParser
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
 
-                db.Tasks.AddRange(Tasks.list);
+                db.Task.AddRange(Tasks.list);
 
                 db.SaveChanges();
             }
