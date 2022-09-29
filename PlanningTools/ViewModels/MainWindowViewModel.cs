@@ -59,7 +59,7 @@ namespace XerParser.ViewModels
 
         #region XerParserField       
 
-        public XerParser.Parse? XerParserField;
+        public bool XerParserField = false;
 
         #endregion
 
@@ -94,19 +94,22 @@ namespace XerParser.ViewModels
         private bool CanParseXerCommandExecute(object p) => FilePath != null && File.Exists(FilePath);
         private void OnParseXerCommandExecuted(object p)
         {
-            XerParserField = new XerParser.Parse(FilePath!, new System.Globalization.CultureInfo("ru-RU")
+            using (var parser = new XerParser.Parse(FilePath!, new System.Globalization.CultureInfo("ru-RU")
             {
                 NumberFormat = { NumberDecimalSeparator = "," }
-            });
+            }))
+            {
+                XerParserField = true;
+            }
         }
         #endregion
 
         #region DmcaAnalyzisCommand
         public ICommand DmcaAnalyzisCommand { get; }
-        private bool CanDmcaAnalyzisCommandExecute(object p) => XerParserField != null;
+        private bool CanDmcaAnalyzisCommandExecute(object p) => XerParserField;
         private void OnDmcaAnalyzisCommandExecuted(object p)
         {
-            DMCA14_Analyzis dmca14_Analyzis = new(XerParserField!);
+            DMCA14_Analyzis dmca14_Analyzis = new();
             TasksCount = dmca14_Analyzis.ActivitiesCount;
             RelationshipsCount = dmca14_Analyzis.RelationshipsCount;
         }

@@ -8,7 +8,7 @@ using XerParser.Classes.Base;
 
 namespace XerParser
 {
-    public class Parse
+    public class Parse : IDisposable
     {
         private readonly string _filePath;
 
@@ -45,7 +45,7 @@ namespace XerParser
             if (cultureInfo == null) cultureInfo = CultureInfo.CurrentCulture;
 
             FileInfo fileInfo = new FileInfo(_filePath);
-            if (!fileInfo.Exists) throw new FileNotFoundException();
+            if (!fileInfo.Exists) throw new FileNotFoundException();            
 
             ReadMultiClassFromCsv(cultureInfo);
 
@@ -54,10 +54,17 @@ namespace XerParser
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
 
+                db.ActvCode.AddRange(ActvCode.list);
+                db.ActvType.AddRange(ActvType.list);
+                db.Calendar.AddRange(Calendar.list);                
                 db.Task.AddRange(Tasks.list);
 
                 db.SaveChanges();
             }
+        }
+
+        public void Dispose()
+        {
         }
 
         public void ReadMultiClassFromCsv(CultureInfo cultureInfo)
