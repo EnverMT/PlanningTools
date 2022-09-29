@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace XerParser.Services.DataBase.SQLite
+namespace DatabaseManager
 {
     public class ApplicationContext : DbContext
     {

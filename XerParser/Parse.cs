@@ -47,7 +47,17 @@ namespace XerParser
             FileInfo fileInfo = new FileInfo(_filePath);
             if (!fileInfo.Exists) throw new FileNotFoundException();
 
-            ReadMultiClassFromCsv(cultureInfo);            
+            ReadMultiClassFromCsv(cultureInfo);  
+
+            using (DatabaseManager.ApplicationContext db = new())
+            {
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+                db.Tasks.AddRange(Tasks.list);
+
+                db.SaveChanges();
+            }
         }
 
         public void ReadMultiClassFromCsv(CultureInfo cultureInfo)
