@@ -45,6 +45,17 @@ namespace XerParser.ViewModels
 
         #endregion
 
+        #region RelationshipsCount
+
+        private int? _relationshipsCount = null;
+        public int? RelationshipsCount
+        {
+            get => _relationshipsCount;
+            set => Set(ref _relationshipsCount, value);
+        }
+
+        #endregion
+
         #region ParsedTypes
 
         #region ActvCode
@@ -308,6 +319,7 @@ namespace XerParser.ViewModels
         {
             DMCA14_Analyzis dmca14_Analyzis = new(XerParserField!);
             TasksCount = dmca14_Analyzis.ActivitiesCount;
+            RelationshipsCount = dmca14_Analyzis.RelationshipsCount;
         }
         #endregion
 

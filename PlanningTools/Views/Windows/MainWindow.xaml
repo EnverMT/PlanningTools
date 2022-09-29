@@ -48,16 +48,22 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Filepath: "/>
-                        <Label Content="{Binding Path=FilePath}"/>                        
+                        <Label Content="{Binding Path=FilePath}"/>
                     </StackPanel>
+
+
+
+                    <Button Content="Parse XER file" Width="120" HorizontalAlignment="Left" Command="{Binding Path=ParseXerCommand}"/>
+                    <Button Content="DMCA Analyzis" Width="120" HorizontalAlignment="Left" Command="{Binding Path=DmcaAnalyzisCommand}"/>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Tasks count: "/>
                         <Label Content="{Binding Path=TasksCount}"/>
-                    </StackPanel>                    
-
-                    <Button Content="Parse XER file" Width="120" HorizontalAlignment="Left" Command="{Binding Path=ParseXerCommand}"/>
-                    <Button Content="DMCA Analyzis" Width="120" HorizontalAlignment="Left" Command="{Binding Path=DmcaAnalyzisCommand}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Relationships count: "/>
+                        <Label Content="{Binding Path=RelationshipsCount}"/>
+                    </StackPanel>
 
                 </StackPanel>
             </TabItem>
