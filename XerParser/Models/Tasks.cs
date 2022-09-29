@@ -1,4 +1,5 @@
 ﻿using XerParser.Models.Base;
+using XerParser.Models.Classes;
 
 namespace XerParser.Models
 {
@@ -6,6 +7,7 @@ namespace XerParser.Models
     {
         public int Count()
         {
+            List<TASKRSRC> a = list.FirstOrDefault().SearchResources(_parseContex).Resources;
             return list.Count;
         }
     }

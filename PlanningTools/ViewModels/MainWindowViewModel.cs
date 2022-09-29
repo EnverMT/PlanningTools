@@ -267,7 +267,7 @@ namespace XerParser.ViewModels
 
         #region XerParserField       
 
-        public XerParser.Parse? XerParserField;       
+        public XerParser.Parse? XerParserField;
 
         #endregion
 
@@ -296,7 +296,7 @@ namespace XerParser.ViewModels
             XerParserField = new XerParser.Parse(FilePath, new System.Globalization.CultureInfo("ru-RU")
             {
                 NumberFormat = { NumberDecimalSeparator = "," }
-            });            
+            });
 
             ActvCode = XerParserField.ActvCode.list;
             ActvType = XerParserField.ActvType.list;
@@ -304,7 +304,7 @@ namespace XerParser.ViewModels
             Currtypes = XerParserField.Currtypes.list;
 
             TasksCount = XerParserField.Tasks.Count();
-          
+
         }
         #endregion
 
