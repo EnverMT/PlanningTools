@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class RSRC
     {
+        [Key]
         public int rsrc_id { get; set; }
         public int? parent_rsrc_id { get; set; }
         public int? clndr_id { get; set; }

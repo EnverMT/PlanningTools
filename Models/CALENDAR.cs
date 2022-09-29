@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class CALENDAR
     {
+        [Key]
         public int clndr_id { get; set; }
         public string? default_flag { get; set; }
         public string? clndr_name { get; set; }

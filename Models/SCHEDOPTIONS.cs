@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class SCHEDOPTIONS
     {
+        [Key]
         public int schedoptions_id { get; set; }
         public int? proj_id { get; set; }
         public string? sched_outer_depend_type { get; set; }

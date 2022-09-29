@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class PROJCOST
     {
+        [Key]
         public int cost_item_id { get; set; }
         public int? acct_id { get; set; }
         public int? pobs_id { get; set; }

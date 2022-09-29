@@ -36,5 +36,10 @@ namespace DatabaseManager
         {
             optionsBuilder.UseSqlite("Data Source=database.db");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Models.TASKACTV>().HasKey(u => new { u.task_id, u.actv_code_type_id });
+            modelBuilder.Entity<Models.UDFVALUE>().HasKey(u => new { u.udf_code_id, u.fk_id });
+        }
     }
 }

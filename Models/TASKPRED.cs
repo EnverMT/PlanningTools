@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class TASKPRED
     {
+        [Key]
         public int task_pred_id { get; set; }
         public int task_id { get; set; }
         public int pred_task_id { get; set; }

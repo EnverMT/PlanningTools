@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class RSRCCURVDATA
     {
+        [Key]
         public int curv_id { get; set; }
         public string curv_name { get; set; }
         public string default_flag { get; set; }

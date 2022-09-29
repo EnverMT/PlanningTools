@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class MEMOTYPE
     {
+        [Key]
         public int memo_type_id { get; set; }
         public int seq_num { get; set; }
         public string? proj_flag { get; set; }

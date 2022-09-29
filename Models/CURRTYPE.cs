@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class CURRTYPE
     {
+        [Key]
         public int curr_id { get; set; }
         public int decimal_digit_cnt { get; set; }
         public string? curr_symbol { get; set; }

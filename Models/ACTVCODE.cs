@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class ACTVCODE
     {
+        [Key]
         public int actv_code_id { get; set; }
         public int? parent_actv_code_id { get; set; }
         public int actv_code_type_id { get; set; }

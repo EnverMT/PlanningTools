@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class RSRCRATE
     {
+        [Key]
         public int rsrc_rate_id { get; set; }
         public int rsrc_id { get; set; }
         public double max_qty_per_hr { get; set; }

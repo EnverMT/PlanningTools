@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class PROJWBS
     {
+        [Key]
         public int wbs_id { get; set; }
         public int? proj_id { get; set; }
         public int? obs_id { get; set; }

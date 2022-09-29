@@ -1,7 +1,10 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class PROJECT
     {
+        [Key]
         public int proj_id { get; set; }
         public int fy_start_month_num { get; set; }
         public string? rsrc_self_add_flag { get; set; }
