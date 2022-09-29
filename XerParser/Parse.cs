@@ -2,9 +2,9 @@
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.Text;
-using XerParser.Models.Base;
-using XerParser.Models.Classes;
-using XerParser.Services.DataBase.SQLite;
+using XerParser.Classes;
+using XerParser.Classes.Base;
+using Models;
 
 namespace XerParser
 {
@@ -12,30 +12,30 @@ namespace XerParser
     {
         private readonly string _filePath;
 
-        public BaseModel<ACTVCODE> ActvCode = new();
-        public BaseModel<ACTVTYPE> ActvType = new();
-        public BaseModel<CALENDAR> Calendar = new();
-        public BaseModel<CURRTYPE> Currtypes = new();
-        public BaseModel<MEMOTYPE> Memotypes = new();
-        public BaseModel<NONWORK> Nonwork = new();
-        public BaseModel<OBS> Obs = new();
-        public BaseModel<PROJCOST> ProjCost = new();
-        public BaseModel<PROJECT> Project = new();
-        public BaseModel<PROJWBS> ProjWbs = new();
-        public BaseModel<RISKTYPE> RiskType = new();
-        public BaseModel<RSRC> Rsrc = new();
-        public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
-        public BaseModel<RSRCRATE> RsrcRate = new();
-        public BaseModel<SCHEDOPTIONS> SchedOptions = new();
-        public Models.TASKS Tasks = new();
-        public BaseModel<TASKACTV> TaskActv = new();
-        public BaseModel<TASKMEMO> TaskMemo = new();
-        public BaseModel<TASKPRED> TaskPred = new();
-        public BaseModel<TASKPROC> TaskProc = new();
-        public BaseModel<TASKRSRC> TaskRsrc = new();
-        public BaseModel<UDFTYPE> UdfType = new();
-        public BaseModel<UDFVALUE> UdfValue = new();
-        public BaseModel<UMEASURE> Umeasure = new();
+        public BaseClass<ACTVCODE> ActvCode = new();
+        public BaseClass<ACTVTYPE> ActvType = new();
+        public BaseClass<CALENDAR> Calendar = new();
+        public BaseClass<CURRTYPE> Currtypes = new();
+        public BaseClass<MEMOTYPE> Memotypes = new();
+        public BaseClass<NONWORK> Nonwork = new();
+        public BaseClass<OBS> Obs = new();
+        public BaseClass<PROJCOST> ProjCost = new();
+        public BaseClass<PROJECT> Project = new();
+        public BaseClass<PROJWBS> ProjWbs = new();
+        public BaseClass<RISKTYPE> RiskType = new();
+        public BaseClass<RSRC> Rsrc = new();
+        public BaseClass<RSRCCURVDATA> RsrcCurvData = new();
+        public BaseClass<RSRCRATE> RsrcRate = new();
+        public BaseClass<SCHEDOPTIONS> SchedOptions = new();
+        public TASKS Tasks = new();
+        public BaseClass<TASKACTV> TaskActv = new();
+        public BaseClass<TASKMEMO> TaskMemo = new();
+        public BaseClass<TASKPRED> TaskPred = new();
+        public BaseClass<TASKPROC> TaskProc = new();
+        public BaseClass<TASKRSRC> TaskRsrc = new();
+        public BaseClass<UDFTYPE> UdfType = new();
+        public BaseClass<UDFVALUE> UdfValue = new();
+        public BaseClass<UMEASURE> Umeasure = new();
 
 
 
@@ -47,17 +47,7 @@ namespace XerParser
             FileInfo fileInfo = new FileInfo(_filePath);
             if (!fileInfo.Exists) throw new FileNotFoundException();
 
-            ReadMultiClassFromCsv(cultureInfo);
-
-            using (ApplicationContext db = new ApplicationContext())
-            {
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
-                db.Tasks.AddRange(Tasks.list);
-
-                db.SaveChanges();
-            }
+            ReadMultiClassFromCsv(cultureInfo);            
         }
 
         public void ReadMultiClassFromCsv(CultureInfo cultureInfo)
