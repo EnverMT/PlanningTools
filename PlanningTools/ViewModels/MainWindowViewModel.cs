@@ -32,7 +32,16 @@ namespace XerParser.ViewModels
 
         #endregion
 
+        #region TasksCount
 
+        private int? _tasksCount = null;
+        public int? TasksCount
+        {
+            get => _tasksCount;
+            set => Set(ref _tasksCount, value);
+        }
+
+        #endregion
 
         #region ParsedTypes
 
@@ -256,6 +265,12 @@ namespace XerParser.ViewModels
         #endregion
 
 
+        #region XerParserField       
+
+        public XerParser.Parse? XerParserField;       
+
+        #endregion
+
 
         #region Commands
 
@@ -278,34 +293,18 @@ namespace XerParser.ViewModels
         private void OnParseXerCommandExecuted(object p)
         {
             if (FilePath == null) return;
-            var xp = new XerParser.Parse(FilePath, new System.Globalization.CultureInfo("ru-RU")
+            XerParserField = new XerParser.Parse(FilePath, new System.Globalization.CultureInfo("ru-RU")
             {
                 NumberFormat = { NumberDecimalSeparator = "," }
-            });
-            ActvCode = xp.ActvCode.list;
-            ActvType = xp.ActvType.list;
-            Calendar = xp.Calendar.list;
-            Currtypes = xp.Currtypes.list;
-            Memotypes = xp.Memotypes.list;
-            Nonwork = xp.Nonwork.list;
-            Obs = xp.Obs.list;
-            ProjCost = xp.ProjCost.list;
-            Project = xp.Project.list;
-            ProjWbs = xp.ProjWbs.list;
-            RiskType = xp.RiskType.list;
-            Rsrc = xp.Rsrc.list;
-            RsrcCurvData = xp.RsrcCurvData.list;
-            RsrcRate = xp.RsrcRate.list;
-            SchedOptions = xp.SchedOptions.list;
-            Tasks = xp.Tasks.list;
-            TaskActv = xp.TaskActv.list;
-            TaskMemo = xp.TaskMemo.list;
-            TaskPred = xp.TaskPred.list;
-            TaskProc = xp.TaskProc.list;
-            TaskRsrc = xp.TaskRsrc.list;
-            UdfType = xp.UdfType.list;
-            UdfValue = xp.UdfValue.list;
-            Umeasure = xp.Umeasure.list;
+            });            
+
+            ActvCode = XerParserField.ActvCode.list;
+            ActvType = XerParserField.ActvType.list;
+            Calendar = XerParserField.Calendar.list;
+            Currtypes = XerParserField.Currtypes.list;
+
+            TasksCount = XerParserField.Tasks.Count();
+          
         }
         #endregion
 
