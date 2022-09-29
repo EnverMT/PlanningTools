@@ -1,5 +1,6 @@
 ﻿using DMCA;
 using Microsoft.Win32;
+using PlanningTools.Views.Windows;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Input;
@@ -287,6 +288,16 @@ namespace XerParser.ViewModels
 
         #region Commands
 
+        #region AboutCommand
+        public ICommand AboutCommand { get; }
+        private bool CanAboutCommandExecute(object p) => true;
+        private void OnAboutCommandExecuted(object p)
+        {
+            About about = new();
+            about.ShowDialog();
+        }
+        #endregion
+
         #region OpenFileCommand
         public ICommand OpenFileDialogCommand { get; }
         private bool CanOpenFileCommandExecute(object p) => true;
@@ -326,6 +337,7 @@ namespace XerParser.ViewModels
         #endregion
         public MainWindowViewModel()
         {
+            AboutCommand = new RelayCommand(OnAboutCommandExecuted, CanAboutCommandExecute);
             OpenFileDialogCommand = new RelayCommand(OnOpenFileCommandExecuted, CanOpenFileCommandExecute);
             ParseXerCommand = new RelayCommand(OnParseXerCommandExecuted, CanParseXerCommandExecute);
             DmcaAnalyzisCommand = new RelayCommand(OnDmcaAnalyzisCommandExecuted, CanDmcaAnalyzisCommandExecute);

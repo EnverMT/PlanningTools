@@ -34,8 +34,8 @@
                     </MenuItem.Command>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Help">
-                <MenuItem Header="About"/>
+            <MenuItem Header="Help" >
+                <MenuItem Header="About" Command="{Binding Path=AboutCommand}"/>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
