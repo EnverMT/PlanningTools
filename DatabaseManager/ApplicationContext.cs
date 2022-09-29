@@ -4,7 +4,7 @@ namespace XerParser.Services.DataBase.SQLite
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<XerParser.Models.Classes.TASK> Tasks => Set<XerParser.Models.Classes.TASK>();
+        public DbSet<Models.TASK> Tasks => Set<Models.TASK>();
         public ApplicationContext() => Database.EnsureCreated();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
