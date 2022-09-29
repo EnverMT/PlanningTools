@@ -1,4 +1,6 @@
-﻿namespace XerParser.Models.Classes
+﻿using Microsoft.VisualBasic;
+
+namespace XerParser.Models.Classes
 {
     public class TASK
     {
@@ -70,39 +72,5 @@
         public int? location_id { get; set; }
         public string? control_updates_flag { get; set; }
         #endregion
-
-        public List<TASKRSRC>? Resources = null;
-
-        public List<TASKPROC>? Steps = null;
-
-        public List<TASKACTV>? ActivityCodes = null;
-
-        public int Id()
-        {
-            return this.task_id;
-        }
-
-        public decimal? TotalFloat()
-        {
-            return this.total_float_hr_cnt;
-        }
-
-        public TASK SearchResources(XerParser.Parse parseContex)
-        {
-            Resources = parseContex.TaskRsrc.list.Where(x => x.task_id == this.task_id).ToList();
-            return this;
-        }
-
-        public TASK SearchSteps(XerParser.Parse parseContex)
-        {
-            Steps = parseContex.TaskProc.list.Where(x => x.task_id == this.task_id).ToList();
-            return this;
-        }
-
-        public TASK SearchActivityCodes(XerParser.Parse parseContex)
-        {
-            ActivityCodes = parseContex.TaskActv.list.Where(x => x.task_id == this.task_id).ToList();
-            return this;
-        }
     }
 }
