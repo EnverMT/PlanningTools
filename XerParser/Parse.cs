@@ -18,6 +18,7 @@ namespace XerParser
         public BaseModel<MEMOTYPE> Memotypes = new();
         public BaseModel<NONWORK> Nonwork = new();
         public BaseModel<OBS> Obs = new();
+        public BaseModel<PROJCOST> ProjCost = new();
         public BaseModel<PROJECT> Project = new();
         public BaseModel<PROJWBS> ProjWbs = new();
         public BaseModel<RISKTYPE> RiskType = new();
@@ -26,6 +27,9 @@ namespace XerParser
         public BaseModel<RSRCRATE> RsrcRate = new();
         public BaseModel<SCHEDOPTIONS> SchedOptions = new();
         public BaseModel<TASK> Task = new();
+        public BaseModel<TASKMEMO> TaskMemo = new();
+        public BaseModel<TASKPRED> TaskPred = new();
+        public BaseModel<TASKPROC> TaskProc = new();
         public BaseModel<UDFTYPE> UdfType = new();
         public BaseModel<UMEASURE> Umeasure = new();
 
@@ -98,6 +102,9 @@ namespace XerParser
                             case "OBS":
                                 Obs.Add(csvReader);
                                 break;
+                            case "PROJCOST":
+                                ProjCost.Add(csvReader);
+                                break;
                             case "PROJECT":
                                 Project.Add(csvReader);
                                 break;
@@ -121,6 +128,15 @@ namespace XerParser
                                 break;
                             case "TASK":
                                 Task.Add(csvReader);
+                                break;
+                            case "TASKMEMO":
+                                TaskMemo.Add(csvReader);
+                                break;
+                            case "TASKPRED":
+                                TaskPred.Add(csvReader);
+                                break;
+                            case "TASKPROC":
+                                TaskProc.Add(csvReader);
                                 break;
                             case "UDFTYPE":
                                 UdfType.Add(csvReader);

@@ -75,6 +75,9 @@
             <TabItem Header="OBS">
                 <DataGrid ItemsSource="{Binding Path=Obs}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="ProCost">
+                <DataGrid ItemsSource="{Binding Path=ProjCost}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="Project">
                 <DataGrid ItemsSource="{Binding Path=Project}" IsReadOnly="True"/>
             </TabItem>
@@ -98,6 +101,15 @@
             </TabItem>
             <TabItem Header="Task">
                 <DataGrid ItemsSource="{Binding Path=Task}" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="TaskMemo">
+                <DataGrid ItemsSource="{Binding Path=TaskMemo}" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="TaskPred">
+                <DataGrid ItemsSource="{Binding Path=TaskPred}" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="TaskProc">
+                <DataGrid ItemsSource="{Binding Path=TaskProc}" IsReadOnly="True"/>
             </TabItem>
             <TabItem Header="UdfType">
                 <DataGrid ItemsSource="{Binding Path=UdfType}" IsReadOnly="True"/>

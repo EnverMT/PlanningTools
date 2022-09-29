@@ -99,6 +99,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region ProjCost
+        private List<XerParser.Models.Classes.PROJCOST>? _projCost = null;
+        public List<XerParser.Models.Classes.PROJCOST>? ProjCost
+        {
+            get => _projCost;
+            set => Set(ref _projCost, value);
+        }
+        #endregion
+
         #region Project
         private List<XerParser.Models.Classes.PROJECT>? _project = null;
         public List<XerParser.Models.Classes.PROJECT>? Project
@@ -171,6 +180,34 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region TaskMemo
+        private List<XerParser.Models.Classes.TASKMEMO>? _taskMemo = null;
+        public List<XerParser.Models.Classes.TASKMEMO>? TaskMemo
+        {
+            get => _taskMemo;
+            set => Set(ref _taskMemo, value);
+        }
+        #endregion
+
+        #region TaskPred
+        private List<XerParser.Models.Classes.TASKPRED>? _taskPred = null;
+        public List<XerParser.Models.Classes.TASKPRED>? TaskPred
+        {
+            get => _taskPred;
+            set => Set(ref _taskPred, value);
+        }
+        #endregion
+
+        #region TaskProc
+        private List<XerParser.Models.Classes.TASKPROC>? _taskProc = null;
+        public List<XerParser.Models.Classes.TASKPROC>? TaskProc
+        {
+            get => _taskProc;
+            set => Set(ref _taskProc, value);
+        }
+        #endregion
+
+
         #region UdfType
         private List<XerParser.Models.Classes.UDFTYPE>? _udfType = null;
         public List<XerParser.Models.Classes.UDFTYPE>? UdfType
@@ -225,6 +262,7 @@ namespace XerParser.ViewModels
             Memotypes = xp.Memotypes.list;
             Nonwork = xp.Nonwork.list;
             Obs = xp.Obs.list;
+            ProjCost = xp.ProjCost.list;
             Project = xp.Project.list;
             ProjWbs = xp.ProjWbs.list;
             RiskType = xp.RiskType.list;
@@ -233,6 +271,9 @@ namespace XerParser.ViewModels
             RsrcRate = xp.RsrcRate.list;
             SchedOptions = xp.SchedOptions.list;
             Task = xp.Task.list;
+            TaskMemo = xp.TaskMemo.list;
+            TaskPred = xp.TaskPred.list;
+            TaskProc = xp.TaskProc.list;
             UdfType = xp.UdfType.list;
             Umeasure = xp.Umeasure.list;
         }
