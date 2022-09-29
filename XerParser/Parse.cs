@@ -1,10 +1,10 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using Models;
 using System.Globalization;
 using System.Text;
 using XerParser.Classes;
 using XerParser.Classes.Base;
-using Models;
 
 namespace XerParser
 {
@@ -47,7 +47,7 @@ namespace XerParser
             FileInfo fileInfo = new FileInfo(_filePath);
             if (!fileInfo.Exists) throw new FileNotFoundException();
 
-            ReadMultiClassFromCsv(cultureInfo);  
+            ReadMultiClassFromCsv(cultureInfo);
 
             using (DatabaseManager.ApplicationContext db = new())
             {

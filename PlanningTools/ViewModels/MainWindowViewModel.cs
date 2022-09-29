@@ -1,7 +1,6 @@
 ﻿using DMCA;
 using Microsoft.Win32;
 using PlanningTools.Views.Windows;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Input;
 using XerParser.Infrastructure.Commands;
