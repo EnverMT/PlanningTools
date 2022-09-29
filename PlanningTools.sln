@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlanningTools", "PlanningTools\PlanningTools.csproj", "{BA68EBEB-1D82-4855-9251-0CB48122B43B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XerParser", "XerParser\XerParser.csproj", "{29FB635E-0623-4455-84A7-27E1126CB34D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XerParser", "XerParser\XerParser.csproj", "{29FB635E-0623-4455-84A7-27E1126CB34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMCA", "DMCA\DMCA.csproj", "{D2583EBD-83B7-42B6-90C4-EC31480B71E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{29FB635E-0623-4455-84A7-27E1126CB34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29FB635E-0623-4455-84A7-27E1126CB34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29FB635E-0623-4455-84A7-27E1126CB34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2583EBD-83B7-42B6-90C4-EC31480B71E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2583EBD-83B7-42B6-90C4-EC31480B71E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2583EBD-83B7-42B6-90C4-EC31480B71E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2583EBD-83B7-42B6-90C4-EC31480B71E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

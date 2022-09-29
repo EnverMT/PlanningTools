@@ -1,5 +1,7 @@
-﻿using Microsoft.Win32;
+﻿using DMCA;
+using Microsoft.Win32;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Input;
 using XerParser.Infrastructure.Commands;
 using XerParser.ViewModels.Base;
@@ -289,22 +291,23 @@ namespace XerParser.ViewModels
 
         #region ParseXerCommand
         public ICommand ParseXerCommand { get; }
-        private bool CanParseXerCommandExecute(object p) => true;
+        private bool CanParseXerCommandExecute(object p) => FilePath != null && File.Exists(FilePath);
         private void OnParseXerCommandExecuted(object p)
         {
-            if (FilePath == null) return;
-            XerParserField = new XerParser.Parse(FilePath, new System.Globalization.CultureInfo("ru-RU")
+            XerParserField = new XerParser.Parse(FilePath!, new System.Globalization.CultureInfo("ru-RU")
             {
                 NumberFormat = { NumberDecimalSeparator = "," }
             });
+        }
+        #endregion
 
-            ActvCode = XerParserField.ActvCode.list;
-            ActvType = XerParserField.ActvType.list;
-            Calendar = XerParserField.Calendar.list;
-            Currtypes = XerParserField.Currtypes.list;
-
-            TasksCount = XerParserField.Tasks.Count();
-
+        #region DmcaAnalyzisCommand
+        public ICommand DmcaAnalyzisCommand { get; }
+        private bool CanDmcaAnalyzisCommandExecute(object p) => XerParserField != null;
+        private void OnDmcaAnalyzisCommandExecuted(object p)
+        {
+            DMCA14_Analyzis dmca14_Analyzis = new(XerParserField!);
+            TasksCount = dmca14_Analyzis.ActivitiesCount;
         }
         #endregion
 
@@ -313,6 +316,7 @@ namespace XerParser.ViewModels
         {
             OpenFileDialogCommand = new RelayCommand(OnOpenFileCommandExecuted, CanOpenFileCommandExecute);
             ParseXerCommand = new RelayCommand(OnParseXerCommandExecuted, CanParseXerCommandExecute);
+            DmcaAnalyzisCommand = new RelayCommand(OnDmcaAnalyzisCommandExecuted, CanDmcaAnalyzisCommandExecute);
         }
     }
 }

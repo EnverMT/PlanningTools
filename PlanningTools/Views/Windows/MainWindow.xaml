@@ -57,6 +57,7 @@
                     </StackPanel>                    
 
                     <Button Content="Parse XER file" Width="120" HorizontalAlignment="Left" Command="{Binding Path=ParseXerCommand}"/>
+                    <Button Content="DMCA Analyzis" Width="120" HorizontalAlignment="Left" Command="{Binding Path=DmcaAnalyzisCommand}"/>
 
                 </StackPanel>
             </TabItem>
