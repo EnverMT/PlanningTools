@@ -9,6 +9,7 @@
 
   <ItemGroup>    
     <PackageReference Include="FontAwesome5" Version="2.1.11" />    
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.9" />    
     <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
   </ItemGroup>
 

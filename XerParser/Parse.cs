@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Text;
 using XerParser.Models.Base;
 using XerParser.Models.Classes;
+using XerParser.Services.DataBase.SQLite;
 
 namespace XerParser
 {
@@ -47,6 +48,16 @@ namespace XerParser
             if (!fileInfo.Exists) throw new FileNotFoundException();
 
             ReadMultiClassFromCsv(cultureInfo);
+
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+                db.Tasks.AddRange(Tasks.list);
+
+                db.SaveChanges();
+            }
         }
 
         public void ReadMultiClassFromCsv(CultureInfo cultureInfo)
