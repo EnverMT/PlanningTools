@@ -27,10 +27,13 @@ namespace XerParser
         public BaseModel<RSRCRATE> RsrcRate = new();
         public BaseModel<SCHEDOPTIONS> SchedOptions = new();
         public BaseModel<TASK> Task = new();
+        public BaseModel<TASKACTV> TaskActv = new();
         public BaseModel<TASKMEMO> TaskMemo = new();
         public BaseModel<TASKPRED> TaskPred = new();
         public BaseModel<TASKPROC> TaskProc = new();
+        public BaseModel<TASKRSRC> TaskRsrc = new();
         public BaseModel<UDFTYPE> UdfType = new();
+        public BaseModel<UDFVALUE> UdfValue = new();
         public BaseModel<UMEASURE> Umeasure = new();
 
 
@@ -129,6 +132,9 @@ namespace XerParser
                             case "TASK":
                                 Task.Add(csvReader);
                                 break;
+                            case "TASKACTV":
+                                TaskActv.Add(csvReader);
+                                break;
                             case "TASKMEMO":
                                 TaskMemo.Add(csvReader);
                                 break;
@@ -138,8 +144,14 @@ namespace XerParser
                             case "TASKPROC":
                                 TaskProc.Add(csvReader);
                                 break;
+                            case "TASKRSRC":
+                                TaskRsrc.Add(csvReader);
+                                break;
                             case "UDFTYPE":
                                 UdfType.Add(csvReader);
+                                break;
+                            case "UDFVALUE":
+                                UdfValue.Add(csvReader);
                                 break;
                             case "UMEASURE":
                                 Umeasure.Add(csvReader);

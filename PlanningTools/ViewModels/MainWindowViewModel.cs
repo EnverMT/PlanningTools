@@ -180,6 +180,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region TaskActv
+        private List<XerParser.Models.Classes.TASKACTV>? _taskActv = null;
+        public List<XerParser.Models.Classes.TASKACTV>? TaskActv
+        {
+            get => _taskActv;
+            set => Set(ref _taskActv, value);
+        }
+        #endregion
+
         #region TaskMemo
         private List<XerParser.Models.Classes.TASKMEMO>? _taskMemo = null;
         public List<XerParser.Models.Classes.TASKMEMO>? TaskMemo
@@ -207,6 +216,15 @@ namespace XerParser.ViewModels
         }
         #endregion
 
+        #region TaskRsrc
+        private List<XerParser.Models.Classes.TASKRSRC>? _taskRsrc = null;
+        public List<XerParser.Models.Classes.TASKRSRC>? TaskRsrc
+        {
+            get => _taskRsrc;
+            set => Set(ref _taskRsrc, value);
+        }
+        #endregion
+
 
         #region UdfType
         private List<XerParser.Models.Classes.UDFTYPE>? _udfType = null;
@@ -214,6 +232,15 @@ namespace XerParser.ViewModels
         {
             get => _udfType;
             set => Set(ref _udfType, value);
+        }
+        #endregion
+
+        #region UdfValue
+        private List<XerParser.Models.Classes.UDFVALUE>? _udfValue = null;
+        public List<XerParser.Models.Classes.UDFVALUE>? UdfValue
+        {
+            get => _udfValue;
+            set => Set(ref _udfValue, value);
         }
         #endregion
 
@@ -271,10 +298,13 @@ namespace XerParser.ViewModels
             RsrcRate = xp.RsrcRate.list;
             SchedOptions = xp.SchedOptions.list;
             Task = xp.Task.list;
+            TaskActv = xp.TaskActv.list;
             TaskMemo = xp.TaskMemo.list;
             TaskPred = xp.TaskPred.list;
             TaskProc = xp.TaskProc.list;
+            TaskRsrc = xp.TaskRsrc.list;
             UdfType = xp.UdfType.list;
+            UdfValue = xp.UdfValue.list;
             Umeasure = xp.Umeasure.list;
         }
         #endregion

@@ -102,6 +102,9 @@
             <TabItem Header="Task">
                 <DataGrid ItemsSource="{Binding Path=Task}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="TaskActv">
+                <DataGrid ItemsSource="{Binding Path=TaskActv}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="TaskMemo">
                 <DataGrid ItemsSource="{Binding Path=TaskMemo}" IsReadOnly="True"/>
             </TabItem>
@@ -111,8 +114,14 @@
             <TabItem Header="TaskProc">
                 <DataGrid ItemsSource="{Binding Path=TaskProc}" IsReadOnly="True"/>
             </TabItem>
+            <TabItem Header="TaskRsrc">
+                <DataGrid ItemsSource="{Binding Path=TaskRsrc}" IsReadOnly="True"/>
+            </TabItem>
             <TabItem Header="UdfType">
                 <DataGrid ItemsSource="{Binding Path=UdfType}" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="UdfValue">
+                <DataGrid ItemsSource="{Binding Path=UdfValue}" IsReadOnly="True"/>
             </TabItem>
             <TabItem Header="Umeasure">
                 <DataGrid ItemsSource="{Binding Path=Umeasure}" IsReadOnly="True"/>
