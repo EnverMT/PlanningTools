@@ -2,6 +2,7 @@
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.Text;
+using XerParser.Models;
 using XerParser.Models.Base;
 using XerParser.Models.Classes;
 
@@ -26,7 +27,7 @@ namespace XerParser
         public BaseModel<RSRCCURVDATA> RsrcCurvData = new();
         public BaseModel<RSRCRATE> RsrcRate = new();
         public BaseModel<SCHEDOPTIONS> SchedOptions = new();
-        public BaseModel<TASK> Task = new();
+        public XerParser.Models.TASKS Tasks = new();
         public BaseModel<TASKACTV> TaskActv = new();
         public BaseModel<TASKMEMO> TaskMemo = new();
         public BaseModel<TASKPRED> TaskPred = new();
@@ -130,7 +131,7 @@ namespace XerParser
                                 SchedOptions.Add(csvReader);
                                 break;
                             case "TASK":
-                                Task.Add(csvReader);
+                                Tasks.Add(csvReader);
                                 break;
                             case "TASKACTV":
                                 TaskActv.Add(csvReader);

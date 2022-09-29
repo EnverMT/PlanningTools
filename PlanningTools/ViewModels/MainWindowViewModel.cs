@@ -171,12 +171,12 @@ namespace XerParser.ViewModels
         }
         #endregion
 
-        #region Task
-        private List<XerParser.Models.Classes.TASK>? _task = null;
-        public List<XerParser.Models.Classes.TASK>? Task
+        #region Tasks
+        private List<XerParser.Models.Classes.TASK>? _tasks = null;
+        public List<XerParser.Models.Classes.TASK>? Tasks
         {
-            get => _task;
-            set => Set(ref _task, value);
+            get => _tasks;
+            set => Set(ref _tasks, value);
         }
         #endregion
 
@@ -297,7 +297,7 @@ namespace XerParser.ViewModels
             RsrcCurvData = xp.RsrcCurvData.list;
             RsrcRate = xp.RsrcRate.list;
             SchedOptions = xp.SchedOptions.list;
-            Task = xp.Task.list;
+            Tasks = xp.Tasks.list;
             TaskActv = xp.TaskActv.list;
             TaskMemo = xp.TaskMemo.list;
             TaskPred = xp.TaskPred.list;

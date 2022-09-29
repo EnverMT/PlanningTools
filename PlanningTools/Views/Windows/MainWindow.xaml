@@ -100,7 +100,7 @@
                 <DataGrid ItemsSource="{Binding Path=SchedOptions}" IsReadOnly="True"/>
             </TabItem>
             <TabItem Header="Task">
-                <DataGrid ItemsSource="{Binding Path=Task}" IsReadOnly="True"/>
+                <DataGrid ItemsSource="{Binding Path=Tasks}" IsReadOnly="True"/>
             </TabItem>
             <TabItem Header="TaskActv">
                 <DataGrid ItemsSource="{Binding Path=TaskActv}" IsReadOnly="True"/>
