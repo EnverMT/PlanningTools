@@ -37,6 +37,17 @@ namespace XerParser.ViewModels
 
         #endregion
 
+        #region SelectedProject
+
+        private DatabaseManager.Model.Project? _selectedProject = null;
+        public DatabaseManager.Model.Project? SelectedProject
+        {
+            get => _selectedProject;
+            set => Set(ref _selectedProject, value);
+        }
+
+        #endregion
+
         #region TasksCount
 
         private int? _tasksCount = null;
@@ -48,7 +59,7 @@ namespace XerParser.ViewModels
 
         #endregion
 
-        #region TasksCount
+        #region Projects
 
         private List<DatabaseManager.Model.Project> _projects = new();
         public List<DatabaseManager.Model.Project> Projects
@@ -120,12 +131,15 @@ namespace XerParser.ViewModels
 
         #region DmcaAnalyzisCommand
         public ICommand DmcaAnalyzisCommand { get; }
-        private bool CanDmcaAnalyzisCommandExecute(object p) => true;
+        private bool CanDmcaAnalyzisCommandExecute(object p) => SelectedProject != null;
         private void OnDmcaAnalyzisCommandExecuted(object p)
         {
-            DMCA14_Analyzis dmca14_Analyzis = new();
-            TasksCount = dmca14_Analyzis.ActivitiesCount;
-            RelationshipsCount = dmca14_Analyzis.RelationshipsCount;
+            if (SelectedProject != null)
+            {
+                DMCA14_Analyzis dmca14_Analyzis = new(SelectedProject);
+                TasksCount = dmca14_Analyzis.ActivitiesCount;
+                RelationshipsCount = dmca14_Analyzis.RelationshipsCount;
+            }            
         }
         #endregion
 
@@ -135,7 +149,17 @@ namespace XerParser.ViewModels
             AboutCommand = new RelayCommand(OnAboutCommandExecuted, CanAboutCommandExecute);
             OpenFileDialogCommand = new RelayCommand(OnOpenFileCommandExecuted, CanOpenFileCommandExecute);
             ParseXerCommand = new RelayCommand(OnParseXerCommandExecuted, CanParseXerCommandExecute);
-            DmcaAnalyzisCommand = new RelayCommand(OnDmcaAnalyzisCommandExecuted, CanDmcaAnalyzisCommandExecute);            
+            DmcaAnalyzisCommand = new RelayCommand(OnDmcaAnalyzisCommandExecuted, CanDmcaAnalyzisCommandExecute);
+
+            GetProjects();
+        }
+
+        private void GetProjects()
+        {
+            using (DatabaseManager.ApplicationContext db = new DatabaseManager.ApplicationContext())
+            {
+                Projects = db.Projects.Where(x=>x.ProjectFlag=="Y").ToList();
+            }
         }
     }
 }

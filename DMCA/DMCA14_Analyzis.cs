@@ -1,4 +1,6 @@
-﻿namespace DMCA
+﻿using DatabaseManager.Model;
+
+namespace DMCA
 {
     public class DMCA14_Analyzis
     {
@@ -20,11 +22,17 @@
 
         public readonly int ActivitiesCount;
         public readonly int RelationshipsCount;
-        public DMCA14_Analyzis()
+        public readonly string? ProjectShortName;
+        public readonly string? ProjectName;
+
+        public DMCA14_Analyzis(DatabaseManager.Model.Project project)
         {
             using (DatabaseManager.ApplicationContext db = new())
             {
-                var list = db.Projects.ToList();
+                ProjectShortName = project.ProjShortName;
+                ProjectName = db.Projwbs.Where(x => x.ProjId == project.ProjId && x.ProjNodeFlag == "Y")?.FirstOrDefault()?.WbsName;
+                ActivitiesCount = db.Tasks.Where(x=>x.ProjId == project.ProjId).Count();
+                RelationshipsCount = db.Taskpreds.Where(x=>x.ProjId == project.ProjId).Count();
             }
         }
     }

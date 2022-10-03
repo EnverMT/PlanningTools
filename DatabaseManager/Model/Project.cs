@@ -29,13 +29,13 @@
         public long? LastChecksum { get; set; }
         public double? CriticalDrtnHrCnt { get; set; }
         public double? DefCostPerQty { get; set; }
-        public byte[]? LastRecalcDate { get; set; }
-        public byte[]? PlanStartDate { get; set; }
-        public byte[]? PlanEndDate { get; set; }
-        public byte[]? ScdEndDate { get; set; }
-        public byte[]? AddDate { get; set; }
-        public byte[]? LastTasksumDate { get; set; }
-        public byte[]? FcstStartDate { get; set; }
+        public DateTime? LastRecalcDate { get; set; }
+        public DateTime? PlanStartDate { get; set; }
+        public DateTime? PlanEndDate { get; set; }
+        public DateTime? ScdEndDate { get; set; }
+        public DateTime? AddDate { get; set; }
+        public DateTime? LastTasksumDate { get; set; }
+        public DateTime? FcstStartDate { get; set; }
         public string? DefDurationType { get; set; }
         public string? TaskCodePrefix { get; set; }
         public string? Guid { get; set; }
@@ -55,20 +55,20 @@
         public string? RemTargetLinkFlag { get; set; }
         public string? ResetPlannedFlag { get; set; }
         public string? AllowNegActFlag { get; set; }
-        public byte[]? CheckoutDate { get; set; }
+        public DateTime? CheckoutDate { get; set; }
         public long? CheckoutUserId { get; set; }
         public string? SumAssignLevel { get; set; }
         public long? LastFinDatesId { get; set; }
-        public byte[]? LastBaselineUpdateDate { get; set; }
+        public DateTime? LastBaselineUpdateDate { get; set; }
         public string? CrExternalKey { get; set; }
-        public byte[]? ApplyActualsDate { get; set; }
+        public DateTime? ApplyActualsDate { get; set; }
         public long? LocationId { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
         public string? ControlUpdatesFlag { get; set; }
         public byte[]? FintmplId { get; set; }
 
