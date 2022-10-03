@@ -12,7 +12,9 @@ namespace XerParser
     {
         private readonly string _filePath;
 
-        public BaseClass<ACTVCODE> ActvCode = new();
+        public BaseClass<DatabaseManager.Model.Actvcode> ActvCode = new();
+
+        /*
         public BaseClass<ACTVTYPE> ActvType = new();
         public BaseClass<CALENDAR> Calendar = new();
         public BaseClass<CURRTYPE> Currtypes = new();
@@ -37,7 +39,7 @@ namespace XerParser
         public BaseClass<UDFVALUE> UdfValue = new();
         public BaseClass<UMEASURE> Umeasure = new();
 
-
+        */
 
         public Parse(string filePath, CultureInfo? cultureInfo = null)
         {
@@ -92,6 +94,7 @@ namespace XerParser
                             case "ACTVCODE":
                                 ActvCode.Add(csvReader);
                                 break;
+                                /*
                             case "ACTVTYPE":
                                 ActvType.Add(csvReader);
                                 break;
@@ -161,7 +164,7 @@ namespace XerParser
                             case "UMEASURE":
                                 Umeasure.Add(csvReader);
                                 break;
-
+                                */
                             default:
                                 break;
                         }

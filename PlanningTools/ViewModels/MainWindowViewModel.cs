@@ -50,7 +50,7 @@ namespace XerParser.ViewModels
 
         #region TasksCount
 
-        private List<DatabaseManager.Model.Project> _projects = null;
+        private List<DatabaseManager.Model.Project> _projects = new();
         public List<DatabaseManager.Model.Project> Projects
         {
             get => _projects;
@@ -135,12 +135,7 @@ namespace XerParser.ViewModels
             AboutCommand = new RelayCommand(OnAboutCommandExecuted, CanAboutCommandExecute);
             OpenFileDialogCommand = new RelayCommand(OnOpenFileCommandExecuted, CanOpenFileCommandExecute);
             ParseXerCommand = new RelayCommand(OnParseXerCommandExecuted, CanParseXerCommandExecute);
-            DmcaAnalyzisCommand = new RelayCommand(OnDmcaAnalyzisCommandExecuted, CanDmcaAnalyzisCommandExecute);
-
-            using (DatabaseManager.ApplicationContext db = new())
-            {
-                Projects = db.Projects.ToList();
-            }
+            DmcaAnalyzisCommand = new RelayCommand(OnDmcaAnalyzisCommandExecuted, CanDmcaAnalyzisCommandExecute);            
         }
     }
 }
