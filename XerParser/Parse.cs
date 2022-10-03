@@ -1,9 +1,7 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
-using Models;
 using System.Globalization;
 using System.Text;
-using XerParser.Classes;
 using XerParser.Classes.Base;
 
 namespace XerParser
