@@ -1,7 +1,10 @@
 ﻿using DMCA;
 using Microsoft.Win32;
 using PlanningTools.Views.Windows;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Windows.Documents;
 using System.Windows.Input;
 using XerParser.Infrastructure.Commands;
 using XerParser.ViewModels.Base;
@@ -41,6 +44,17 @@ namespace XerParser.ViewModels
         {
             get => _tasksCount;
             set => Set(ref _tasksCount, value);
+        }
+
+        #endregion
+
+        #region TasksCount
+
+        private List<DatabaseManager.Model.Project> _projects = null;
+        public List<DatabaseManager.Model.Project> Projects
+        {
+            get => _projects;
+            set => Set(ref _projects, value);
         }
 
         #endregion
@@ -106,7 +120,7 @@ namespace XerParser.ViewModels
 
         #region DmcaAnalyzisCommand
         public ICommand DmcaAnalyzisCommand { get; }
-        private bool CanDmcaAnalyzisCommandExecute(object p) => XerParserField;
+        private bool CanDmcaAnalyzisCommandExecute(object p) => true;
         private void OnDmcaAnalyzisCommandExecuted(object p)
         {
             DMCA14_Analyzis dmca14_Analyzis = new();
@@ -122,6 +136,11 @@ namespace XerParser.ViewModels
             OpenFileDialogCommand = new RelayCommand(OnOpenFileCommandExecuted, CanOpenFileCommandExecute);
             ParseXerCommand = new RelayCommand(OnParseXerCommandExecuted, CanParseXerCommandExecute);
             DmcaAnalyzisCommand = new RelayCommand(OnDmcaAnalyzisCommandExecuted, CanDmcaAnalyzisCommandExecute);
+
+            using (DatabaseManager.ApplicationContext db = new())
+            {
+                Projects = db.Projects.ToList();
+            }
         }
     }
 }

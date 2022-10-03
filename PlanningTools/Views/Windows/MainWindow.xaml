@@ -34,6 +34,9 @@
                     </MenuItem.Command>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="Settings"/>
+            </MenuItem>
             <MenuItem Header="Help" >
                 <MenuItem Header="About" Command="{Binding Path=AboutCommand}"/>
             </MenuItem>
@@ -66,7 +69,10 @@
                     </StackPanel>
 
                 </StackPanel>
-            </TabItem>            
+            </TabItem>
+            <TabItem Header="Projects">
+                <DataGrid ItemsSource="{Binding Path=Projects}" IsReadOnly="True"/>
+            </TabItem>
         </TabControl>
 
     </DockPanel>
