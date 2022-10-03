@@ -45,9 +45,9 @@ namespace XerParser
             if (cultureInfo == null) cultureInfo = CultureInfo.CurrentCulture;
 
             FileInfo fileInfo = new FileInfo(_filePath);
-            if (!fileInfo.Exists) throw new FileNotFoundException();            
+            if (!fileInfo.Exists) throw new FileNotFoundException();
 
-            ReadMultiClassFromCsv(cultureInfo);            
+            ReadMultiClassFromCsv(cultureInfo);
         }
 
         public void Dispose()

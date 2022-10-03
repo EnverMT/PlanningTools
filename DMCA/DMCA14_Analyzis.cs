@@ -22,7 +22,7 @@
         public readonly int RelationshipsCount;
         public DMCA14_Analyzis()
         {
-            using (DatabaseManager.ApplicationContext db= new())
+            using (DatabaseManager.ApplicationContext db = new())
             {
                 var list = db.Projects.ToList();
             }

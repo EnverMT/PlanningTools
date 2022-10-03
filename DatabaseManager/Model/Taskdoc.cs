@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DatabaseManager.Model
+﻿namespace DatabaseManager.Model
 {
     public partial class Taskdoc
     {

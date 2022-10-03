@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DatabaseManager.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using DatabaseManager.Model;
 
 namespace DatabaseManager
 {
