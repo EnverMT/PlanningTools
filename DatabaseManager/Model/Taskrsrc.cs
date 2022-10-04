@@ -25,14 +25,14 @@
         public double? ActRegCost { get; set; }
         public double? ActOtCost { get; set; }
         public double? RemainCost { get; set; }
-        public byte[]? ActStartDate { get; set; }
-        public byte[]? ActEndDate { get; set; }
-        public byte[]? RestartDate { get; set; }
-        public byte[]? ReendDate { get; set; }
-        public byte[]? TargetStartDate { get; set; }
-        public byte[]? TargetEndDate { get; set; }
-        public byte[]? RemLateStartDate { get; set; }
-        public byte[]? RemLateEndDate { get; set; }
+        public DateTime? ActStartDate { get; set; }
+        public DateTime? ActEndDate { get; set; }
+        public DateTime? RestartDate { get; set; }
+        public DateTime? ReendDate { get; set; }
+        public DateTime? TargetStartDate { get; set; }
+        public DateTime? TargetEndDate { get; set; }
+        public DateTime? RemLateStartDate { get; set; }
+        public DateTime? RemLateEndDate { get; set; }
         public string? RollupDatesFlag { get; set; }
         public string? TargetCrv { get; set; }
         public string? RemainCrv { get; set; }
@@ -45,11 +45,11 @@
         public long? CurvId { get; set; }
         public string? RsrcType { get; set; }
         public string? CostPerQtySourceType { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
     }
 }
