@@ -36,12 +36,12 @@
         public double? RemainEquipCost { get; set; }
         public double? PerfmWorkQty { get; set; }
         public double? SchedWorkQty { get; set; }
-        public byte[]? ActEndDate { get; set; }
-        public byte[]? ActStartDate { get; set; }
-        public byte[]? BaseEndDate { get; set; }
-        public byte[]? BaseStartDate { get; set; }
-        public byte[]? ReendDate { get; set; }
-        public byte[]? RestartDate { get; set; }
+        public DateTime? ActEndDate { get; set; }
+        public DateTime? ActStartDate { get; set; }
+        public DateTime? BaseEndDate { get; set; }
+        public DateTime? BaseStartDate { get; set; }
+        public DateTime? ReendDate { get; set; }
+        public DateTime? RestartDate { get; set; }
         public double? ActThisPerWorkCost { get; set; }
         public double? ActThisPerWorkQty { get; set; }
         public double? ActThisPerEquipCost { get; set; }
@@ -51,11 +51,11 @@
         public double? ActMatCost { get; set; }
         public double? ActThisPerMatCost { get; set; }
         public double? EacWorkQty { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
     }
 }
