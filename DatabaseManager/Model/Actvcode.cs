@@ -42,6 +42,5 @@ namespace DatabaseManager.Model
 
         [Ignore]
         public DateTime? DeleteDate { get; set; }
-        //Test comment
     }
 }
