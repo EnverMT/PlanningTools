@@ -7,15 +7,15 @@
         public long? WbsId { get; set; }
         public string? ChngByName { get; set; }
         public string? ChngShortName { get; set; }
-        public byte[]? ChngDate { get; set; }
+        public DateTime? ChngDate { get; set; }
         public double? ChngCost { get; set; }
         public string? StatusCode { get; set; }
         public string? ChngDescr { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
     }
 }
