@@ -35,7 +35,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Analyzis">
-                <MenuItem Header="DMCA-14" Command="{Binding Path=DmcaAnalyzisCommand}" CommandParameter="{Binding }"/>
+                <MenuItem Header="DMCA-14" Command="{Binding Path=DmcaAnalyzisCommand}" CommandParameter="{Binding Path=SelectedProject}"/>
                 <MenuItem Header="Parse XER file" Command="{Binding Path=ParseXerCommand}"/>
             </MenuItem>
             <MenuItem Header="Tools">
@@ -67,12 +67,16 @@
             <TabItem Header="DMCA-14 Summary">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Tasks count: "/>
-                        <Label Content="{Binding Path=TasksCount}"/>
+                        <TextBlock Text="Activities count: "/>
+                        <Label Content="{Binding Path=Dmca14_Analyzis.ActivitiesCount}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Relationships count: "/>
-                        <Label Content="{Binding Path=RelationshipsCount}"/>
+                        <Label Content="{Binding Path=Dmca14_Analyzis.RelationshipsCount}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Project name: "/>
+                        <Label Content="{Binding Path=Dmca14_Analyzis.ProjectName}"/>
                     </StackPanel>
                 </StackPanel>
             </TabItem>            
