@@ -26,13 +26,13 @@ namespace DatabaseManager.Model
         public string? Color { get; set; }
         
         [Ignore]
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         [Ignore]
         public string? CreateUser { get; set; }
 
         [Ignore]
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
 
         [Ignore]
         public string? UpdateUser { get; set; }
@@ -41,6 +41,7 @@ namespace DatabaseManager.Model
         public long? DeleteSessionId { get; set; }
 
         [Ignore]
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
+        //Test comment
     }
 }
