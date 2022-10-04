@@ -30,9 +30,10 @@ namespace DMCA
             using (DatabaseManager.ApplicationContext db = new())
             {
                 ProjectShortName = project.ProjShortName;
-                ProjectName = db.Projwbs.Where(x => x.ProjId == project.ProjId && x.ProjNodeFlag == "Y")?.FirstOrDefault()?.WbsName;
-                ActivitiesCount = db.Tasks.Where(x=>x.ProjId == project.ProjId).Count();
-                RelationshipsCount = db.Taskpreds.Where(x=>x.ProjId == project.ProjId).Count();
+                ProjectName = project.WbsName;
+                ActivitiesCount = db.Tasks.Where(x => x.ProjId == project.ProjId).Count();
+                RelationshipsCount = db.Taskpreds.Where(x => x.ProjId == project.ProjId).Count();
+                var tasks = project.Tasks;
             }
         }
     }

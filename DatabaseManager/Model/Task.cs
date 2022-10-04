@@ -1,9 +1,12 @@
-﻿namespace DatabaseManager.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DatabaseManager.Model
 {
     public partial class Task
     {
         public long TaskId { get; set; }
-        public long? ProjId { get; set; }
+        public long ProjId { get; set; }
+        public Project Project { get; set; }
         public long? WbsId { get; set; }
         public long? ClndrId { get; set; }
         public double? PhysCompletePct { get; set; }

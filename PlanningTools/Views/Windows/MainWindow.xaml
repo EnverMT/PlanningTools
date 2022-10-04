@@ -52,7 +52,17 @@
         </StatusBar>
         <TabControl>
             <TabItem Header="Projects">
-                <DataGrid ItemsSource="{Binding Path=Projects}" IsReadOnly="True" SelectedItem="{Binding Path=SelectedProject}"/>
+                <DataGrid ItemsSource="{Binding Path=Projects}" 
+                          IsReadOnly="True" 
+                          SelectedItem="{Binding Path=SelectedProject}"
+                          AutoGenerateColumns="False"
+                          >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Project code" Binding="{Binding Path=ProjShortName}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Project name" Binding="{Binding Path=WbsName}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                    
+                </DataGrid>
             </TabItem>
             <TabItem Header="DMCA-14 Summary">
                 <StackPanel>
