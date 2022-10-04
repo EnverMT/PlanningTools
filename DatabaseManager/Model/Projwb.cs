@@ -20,18 +20,18 @@
         public double? AnnDscntRatePct { get; set; }
         public string? DscntPeriodType { get; set; }
         public double? IndepRemainWorkQty { get; set; }
-        public byte[]? AnticipStartDate { get; set; }
-        public byte[]? AnticipEndDate { get; set; }
+        public DateTime? AnticipStartDate { get; set; }
+        public DateTime? AnticipEndDate { get; set; }
         public string? EvComputeType { get; set; }
         public string? EvEtcComputeType { get; set; }
         public string? Guid { get; set; }
         public string? TmplGuid { get; set; }
         public double? EstWt { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
     }
 }
