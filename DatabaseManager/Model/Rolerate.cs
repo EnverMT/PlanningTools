@@ -9,13 +9,13 @@
         public double? CostPerQty3 { get; set; }
         public double? CostPerQty4 { get; set; }
         public double? CostPerQty5 { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
-        public byte[]? StartDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
+        public DateTime? StartDate { get; set; }
         public double? MaxQtyPerHr { get; set; }
     }
 }
