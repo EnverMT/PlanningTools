@@ -2,7 +2,7 @@
 {
     public partial class Refrdel
     {
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
         public string? TableName { get; set; }
         public string? Pk1 { get; set; }
         public string? Pk2 { get; set; }
