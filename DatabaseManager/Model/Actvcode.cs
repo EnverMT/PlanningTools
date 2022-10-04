@@ -6,13 +6,13 @@ namespace DatabaseManager.Model
     {
         [Name("actv_code_id")]
         public long ActvCodeId { get; set; }
-        
+
         [Name("parent_actv_code_id")]
         public long? ParentActvCodeId { get; set; }
-        
+
         [Name("actv_code_type_id")]
         public long? ActvCodeTypeId { get; set; }
-        
+
         [Name("actv_code_name")]
         public string? ActvCodeName { get; set; }
 
@@ -24,7 +24,7 @@ namespace DatabaseManager.Model
 
         [Name("color")]
         public string? Color { get; set; }
-        
+
         [Ignore]
         public DateTime? CreateDate { get; set; }
 
@@ -42,6 +42,5 @@ namespace DatabaseManager.Model
 
         [Ignore]
         public DateTime? DeleteDate { get; set; }
-        //Test comment
     }
 }
