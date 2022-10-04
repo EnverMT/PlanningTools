@@ -13,8 +13,8 @@
         public long? WbsId { get; set; }
         public string? AddByName { get; set; }
         public string? IssueName { get; set; }
-        public byte[]? ResolvDate { get; set; }
-        public byte[]? AddDate { get; set; }
+        public DateTime? ResolvDate { get; set; }
+        public DateTime? AddDate { get; set; }
         public string? PriorityType { get; set; }
         public string? StatusCode { get; set; }
         public long? BaseProjId { get; set; }
@@ -23,11 +23,11 @@
         public double? LoParmValue { get; set; }
         public byte[]? IssueNotes { get; set; }
         public long? WorkspaceId { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
     }
 }
