@@ -10,6 +10,6 @@
         public long? OldPk2 { get; set; }
         public string? OldStr { get; set; }
         public string? NewStr { get; set; }
-        public byte[]? AddDate { get; set; }
+        public DateTime? AddDate { get; set; }
     }
 }
