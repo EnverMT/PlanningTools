@@ -7,17 +7,17 @@
         public long? RsrcId { get; set; }
         public long? RoleId { get; set; }
         public long? ProjId { get; set; }
-        public byte[]? StartDate { get; set; }
-        public byte[]? EndDate { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
         public string? CommittedFlag { get; set; }
         public string? AutoComputeDatesFlag { get; set; }
         public string? RsrcRequestData { get; set; }
         public long? WbrsCatId { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
     }
 }
