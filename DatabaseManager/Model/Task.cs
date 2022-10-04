@@ -30,43 +30,43 @@ namespace DatabaseManager.Model
         public double? TargetEquipQty { get; set; }
         public double? ActEquipQty { get; set; }
         public double? RemainEquipQty { get; set; }
-        public byte[]? CstrDate { get; set; }
-        public byte[]? ActStartDate { get; set; }
-        public byte[]? ActEndDate { get; set; }
-        public byte[]? LateStartDate { get; set; }
-        public byte[]? LateEndDate { get; set; }
-        public byte[]? ExpectEndDate { get; set; }
-        public byte[]? EarlyStartDate { get; set; }
-        public byte[]? EarlyEndDate { get; set; }
-        public byte[]? RestartDate { get; set; }
-        public byte[]? ReendDate { get; set; }
-        public byte[]? TargetStartDate { get; set; }
-        public byte[]? TargetEndDate { get; set; }
-        public byte[]? RemLateStartDate { get; set; }
-        public byte[]? RemLateEndDate { get; set; }
+        public DateTime? CstrDate { get; set; }
+        public DateTime? ActStartDate { get; set; }
+        public DateTime? ActEndDate { get; set; }
+        public DateTime? LateStartDate { get; set; }
+        public DateTime? LateEndDate { get; set; }
+        public DateTime? ExpectEndDate { get; set; }
+        public DateTime? EarlyStartDate { get; set; }
+        public DateTime? EarlyEndDate { get; set; }
+        public DateTime? RestartDate { get; set; }
+        public DateTime? ReendDate { get; set; }
+        public DateTime? TargetStartDate { get; set; }
+        public DateTime? TargetEndDate { get; set; }
+        public DateTime? RemLateStartDate { get; set; }
+        public DateTime? RemLateEndDate { get; set; }
         public string? CstrType { get; set; }
         public string? PriorityType { get; set; }
-        public byte[]? SuspendDate { get; set; }
-        public byte[]? ResumeDate { get; set; }
+        public DateTime? SuspendDate { get; set; }
+        public DateTime? ResumeDate { get; set; }
         public long? FloatPath { get; set; }
         public long? FloatPathOrder { get; set; }
         public string? Guid { get; set; }
         public string? TmplGuid { get; set; }
-        public byte[]? CstrDate2 { get; set; }
+        public DateTime? CstrDate2 { get; set; }
         public string? CstrType2 { get; set; }
         public string? DrivingPathFlag { get; set; }
         public double? ActThisPerWorkQty { get; set; }
         public double? ActThisPerEquipQty { get; set; }
-        public byte[]? ExternalEarlyStartDate { get; set; }
-        public byte[]? ExternalLateEndDate { get; set; }
+        public DateTime? ExternalEarlyStartDate { get; set; }
+        public DateTime? ExternalLateEndDate { get; set; }
         public long? LocationId { get; set; }
         public double? EstWt { get; set; }
-        public byte[]? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public string? CreateUser { get; set; }
-        public byte[]? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
-        public byte[]? DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
         public double? ScpPctComplete { get; set; }
         public string? ControlUpdatesFlag { get; set; }
     }
