@@ -14,5 +14,6 @@
         public string? UpdateUser { get; set; }
         public long? DeleteSessionId { get; set; }
         public DateTime? DeleteDate { get; set; }
+        //comment Timur
     }
 }
