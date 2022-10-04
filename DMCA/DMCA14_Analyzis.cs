@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DMCA
 {
-    public class DMCA14_Analyzis
+    public class DMCA14_Analyzis 
     {
         /* To do list:
          * [ ] No Sucesors count
@@ -23,6 +23,7 @@ namespace DMCA
 
         public readonly int ActivitiesCount;
         public readonly int RelationshipsCount;
+        public readonly int TasksCount;
         public readonly string? ProjectShortName;
         public readonly string? ProjectName;
 
@@ -34,7 +35,9 @@ namespace DMCA
                 ProjectName = project.WbsName;
                 ActivitiesCount = db.Tasks.Where(x => x.ProjId == project.ProjId).Count();
                 RelationshipsCount = db.Taskpreds.Where(x => x.ProjId == project.ProjId).Count();
-                var tasks = db.Projects.Include(p => p.Tasks);
+                TasksCount = project.Tasks.Count;
+
+                var tasks = db.Projects.Include(p => p.Tasks).ToList();
                 var task2 = project.Tasks;
             }
         }
