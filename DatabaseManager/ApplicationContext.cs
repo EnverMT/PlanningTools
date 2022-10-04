@@ -5581,8 +5581,6 @@ namespace DatabaseManager
                     .HasDefaultValueSql("'NotPrmUser'");
 
                 entity.Property(e => e.WbsId).HasColumnName("WBS_ID");
-
-                entity.HasOne(t => t.Project).WithMany(p => p.Tasks).HasForeignKey(t => t.ProjId).HasPrincipalKey(p => p.ProjId);
             });
 
             modelBuilder.Entity<Taskactv>(entity =>
@@ -7297,7 +7295,14 @@ namespace DatabaseManager
                 entity.Property(e => e.WbsId).HasColumnName("WBS_ID");
             });
 
+            SetForeignKeys(modelBuilder);
+
             OnModelCreatingPartial(modelBuilder);
+        }
+
+        private void SetForeignKeys(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DatabaseManager.Model.Task>().HasOne(t => t.Project).WithMany(p => p.Tasks).HasForeignKey(t => t.ProjId).HasPrincipalKey(p => p.ProjId);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

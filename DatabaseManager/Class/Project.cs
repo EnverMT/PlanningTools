@@ -13,6 +13,7 @@
                 }
                 return name;
             }                  
-        }        
+        }
+        public List<DatabaseManager.Model.Task> Tasks { get; set; } = new();
     }
 }

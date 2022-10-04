@@ -72,8 +72,6 @@
         public string? ControlUpdatesFlag { get; set; }
         public byte[]? FintmplId { get; set; }
 
-        public virtual Fintmpl? Fintmpl { get; set; }
-
-        public List<DatabaseManager.Model.Task> Tasks { get; set; } = new();
+        public virtual Fintmpl? Fintmpl { get; set; }        
     }
 }

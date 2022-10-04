@@ -1,4 +1,5 @@
 ﻿using DatabaseManager.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace DMCA
 {
@@ -33,7 +34,8 @@ namespace DMCA
                 ProjectName = project.WbsName;
                 ActivitiesCount = db.Tasks.Where(x => x.ProjId == project.ProjId).Count();
                 RelationshipsCount = db.Taskpreds.Where(x => x.ProjId == project.ProjId).Count();
-                var tasks = project.Tasks;
+                var tasks = db.Projects.Include(p => p.Tasks);
+                var task2 = project.Tasks;
             }
         }
     }
