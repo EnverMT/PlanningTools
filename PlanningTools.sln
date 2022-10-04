@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DMCA", "DMCA\DMCA.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseManager", "DatabaseManager\DatabaseManager.csproj", "{BF80BDA5-B415-4895-ACCC-E4735A7DC85B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanningToolsMAUI", "PlanningToolsMAUI\PlanningToolsMAUI.csproj", "{D6633CA1-EB05-4D60-8BC7-932B420B6C52}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +33,6 @@ Global
 		{BF80BDA5-B415-4895-ACCC-E4735A7DC85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF80BDA5-B415-4895-ACCC-E4735A7DC85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF80BDA5-B415-4895-ACCC-E4735A7DC85B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6633CA1-EB05-4D60-8BC7-932B420B6C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6633CA1-EB05-4D60-8BC7-932B420B6C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6633CA1-EB05-4D60-8BC7-932B420B6C52}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{D6633CA1-EB05-4D60-8BC7-932B420B6C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6633CA1-EB05-4D60-8BC7-932B420B6C52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6633CA1-EB05-4D60-8BC7-932B420B6C52}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
